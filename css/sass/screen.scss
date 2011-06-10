@@ -1,0 +1,146 @@
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/inline-block";
+
+// variables
+$highlight_color: #d7ec33;
+$text_color: #8f8f8f;
+$link_color: #dcdcdc;
+
+$golden_ratio_small: 38%;
+$golden_ratio_large: 62%;
+$gutter_size: 4%;
+
+body {
+  background: #232323 url(/images/bg/body.png) 0 0 repeat;
+  font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
+  color: $text_color;
+  font-size: 0.84em;
+  width: 90%;
+  margin: 3em auto;
+  @include clearfix;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: $link_color;
+  text-decoration: none;
+  -webkit-transition-duration: .30s;
+  -webkit-transition-property: background-color, color;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+h1 { 
+  font-family: 'Oswald', 'Helvetica Neue', arial, serif; 
+  color: #dcdcdc;
+  font-size: 3.57em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+
+  b {
+    color: $highlight_color;
+    display: block;
+  }
+}
+
+dl {
+  dd {
+    margin-bottom: 1em;
+  }
+}
+
+// sidebar
+aside {
+  float: left;
+  width: $golden_ratio_small - ($gutter_size / 2);
+
+  p {
+    line-height: 1.1em;
+  }
+}
+
+footer {
+  margin-top: 2em;
+}
+
+// main section
+section {
+  line-height: 1.1em;
+  float: right;
+  width: $golden_ratio_large - ($gutter_size / 2);
+
+  h2 {
+    font-size: 3em; 
+    line-height: 0.9;
+    color: #fefefe;
+    margin-bottom: 0.5em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+}
+
+ol#chart {
+  margin-top: 0.4em;
+  li {
+    position: relative;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    line-height: 2;
+
+    .digit {
+      position: absolute;
+      left: -1em;
+    }
+
+    .fill {
+      @include inline-block;
+      height: 2em;
+      background-color: $highlight_color;
+      margin-right: 0.7em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px),
+screen and (max-device-width: 480px) {
+	html {
+		-ms-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+  aside, section { 
+    float: none; 
+    width: auto;
+    max-width: 100%;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body { 
+    margin: 1em auto; 
+  }
+  h1 { font-size: 2.4em; }
+}
+
+//iPhone 4, Opera Mobile 11 and other high pixel ratio devices -----------
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+}
+

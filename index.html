@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <title>Testing Benford's Law</title>                  
+    <meta charset="utf-8" /> 
+    <meta name="description" content="An experiment to test Benford's Law against large, publicly available datasets." /> 
+    <meta name="author" content="Jason Long (@jasonlong) and Bryce Thornton (@brycethornton)" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" /> 
+    <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <aside>
+      <h1>Testing <b>Benford's Law</b></h1>
+
+      <p>Imagine a large dataset, say something like a list of every country
+      and its population.</p>
+
+      [TABLE HERE]
+
+      <p>If you counted how many times the leading digit was a 1, you’d
+      probably find that it was more than the number of 2s. And 2s would
+      probably occur more often than 3s and so on.</p>
+
+      <p>This is Benford’s Law. It states that the disbribution of leading
+      digits follows a logrithmic curve with 9s occuring least often. See the
+      <a href="http://en.wikipedia.org/wiki/Benfords_law">Wikipedia article</a>
+      for a more thorough discussion.</p>
+
+      <p>This is a simple examination of Benford’s Law to see how many large,
+      publicly accessible datasets satisfy the law.</p>
+
+      <footer>
+        <p>
+          <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="jasonlong" data-related="brycethornton">Tweet</a>
+          <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </p>
+
+        <dl id="credits">
+          <dt>Concept, Design, &amp; Frontend Development</dt>
+          <dd><a href="http://twitter.com/jasonlong">@jasonlong</a></dd>
+
+          <dt>Backend &amp; Frontend Development</dt>
+          <dd><a href="http://twitter.com/brycethornton">@brycethornton</a></dd>
+        </dl>
+
+        <p>Code available on <a href="#">Github</a></p>
+      </footer>
+    </aside>
+
+    <section>
+      <h2>Twitter users by followers count</h2>
+
+      <h6>Leading digit frequency</h6>
+
+      <ol id="chart">
+        <li>
+          <span class="digit">1</span>
+          <span class="fill" data-value="39.7"></span>
+        </li>
+        <li>
+          <span class="digit">2</span>
+          <span class="fill" data-value="35.7"></span>
+        </li>
+        <li>
+          <span class="digit">3</span>
+          <span class="fill" data-value="31.7"></span>
+        </li>
+        <li>
+          <span class="digit">4</span>
+          <span class="fill" data-value="29.7"></span>
+        </li>
+        <li>
+          <span class="digit">5</span>
+          <span class="fill" data-value="25.7"></span>
+        </li>
+        <li>
+          <span class="digit">6</span>
+          <span class="fill" data-value="20.7"></span>
+        </li>
+        <li>
+          <span class="digit">7</span>
+          <span class="fill" data-value="15.7"></span>
+        </li>
+        <li>
+          <span class="digit">8</span>
+          <span class="fill" data-value="10.7"></span>
+        </li>
+        <li>
+          <span class="digit">9</span>
+          <span class="fill" data-value="5.7"></span>
+        </li>
+      </ol>
+    </section>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="/js/app.js"></script>
+
+</html>
+
