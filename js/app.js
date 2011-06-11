@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, adjustFooter, fillChart, placeBenfordMarkers;
+  var BENFORD_VALUES, adjustFooter, getDataset, placeBenfordMarkers, populateDatasetOptions;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -13,20 +13,16 @@
   };
   $(document).ready(function() {
     adjustFooter();
-    fillChart();
-    return placeBenfordMarkers();
+    populateDatasetOptions();
+    getDataset('twitter');
+    placeBenfordMarkers();
+    return $('#dataset-options').change(function() {
+      return getDataset($(this).val());
+    });
   });
   $(window).resize(function() {
     return adjustFooter();
   });
-  fillChart = function() {
-    return $('ol#chart li .fill').each(function(index) {
-      var value;
-      value = $(this).attr('data-value');
-      $(this).width(value * 2 + '%');
-      return $('<span>' + value + '%</span>').insertAfter($(this));
-    });
-  };
   placeBenfordMarkers = function() {
     return $('ol#chart li').each(function(index) {
       $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
@@ -41,5 +37,25 @@
       $('footer').appendTo('aside');
       return $('body').removeClass('single-column');
     }
+  };
+  populateDatasetOptions = function() {
+    return $.getJSON('/js/datasets/index.json', function(data) {
+      var items;
+      items = [];
+      $.each(data, function(key, val) {
+        return items.push('<option value="' + key + '">' + val + '</option>');
+      });
+      return $('#dataset-options').html(items.join(''));
+    });
+  };
+  getDataset = function(name) {
+    return $.getJSON('/js/datasets/' + name + '.json', function(data) {
+      return $.each(data, function(key, val) {
+        var element;
+        element = $('ol#chart li::nth-child(' + key + ') .fill');
+        element.width(val * 2 + '%');
+        return element.next('.percentage').html(val + '%');
+      });
+    });
   };
 }).call(this);

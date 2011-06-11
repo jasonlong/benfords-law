@@ -1,7 +1,7 @@
 # coffee --watch -o js/ --compile js/coffee/*.coffee
 
 BENFORD_VALUES = {
-  1: 30.1, 
+  1: 30.1,
   2: 17.6,
   3: 12.5,
   4: 9.7,
@@ -14,17 +14,15 @@ BENFORD_VALUES = {
 
 $(document).ready ->
   adjustFooter()
-  fillChart()
+  populateDatasetOptions()
+  getDataset('twitter')
   placeBenfordMarkers()
+
+  $('#dataset-options').change ->
+    getDataset($(this).val())
 
 $(window).resize ->
   adjustFooter()
-
-fillChart = ->
-  $('ol#chart li .fill').each (index) ->
-    value = $(@).attr('data-value')
-    $(@).width(value*2 + '%')
-    $('<span>'+value+'%</span>').insertAfter $(@)
 
 placeBenfordMarkers = ->
   $('ol#chart li').each (index) ->
@@ -38,3 +36,19 @@ adjustFooter = ->
   else if $('section').css('float') isnt "none" and $('body').hasClass('single-column')
       $('footer').appendTo('aside')
       $('body').removeClass('single-column')
+
+populateDatasetOptions = ->
+  $.getJSON '/js/datasets/index.json', (data) ->
+    items = []
+
+    $.each data, (key, val) ->
+      items.push '<option value="'+key+'">'+val+'</option>'
+
+    $('#dataset-options').html(items.join(''))
+
+getDataset = (name) ->
+  $.getJSON '/js/datasets/'+name+'.json', (data) ->
+    $.each data, (key, val) ->
+      element = $('ol#chart li::nth-child('+key+') .fill')
+      element.width(val*2 + '%')
+      element.next('.percentage').html(val+'%')

@@ -1,11 +1,11 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  <head> 
-    <title>Testing Benford's Law</title>                  
-    <meta charset="utf-8" /> 
-    <meta name="description" content="An experiment to test Benford's Law against large, publicly available datasets." /> 
-    <meta name="author" content="Jason Long (@jasonlong) and Bryce Thornton (@brycethornton)" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" /> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Testing Benford's Law</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="An experiment to test Benford's Law against large, publicly available datasets." />
+    <meta name="author" content="Jason Long (@jasonlong) and Bryce Thornton (@brycethornton)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -51,37 +51,49 @@
     </aside>
 
     <section>
+      <h6>Available Datasets</h6>
+      <select id="dataset-options"></select>
+
       <h2>Twitter users by followers count</h2>
 
       <h6>Leading digit frequency</h6>
 
       <ol id="chart">
         <li>
-          <span class="fill" data-value="32.62"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="16.66"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="11.80"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="9.26"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="7.63"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="6.55"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="5.76"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="5.14"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
         <li>
-          <span class="fill" data-value="4.56"></span>
+          <span class="fill" data-value="0"></span>
+          <span class="percentage"></span>
         </li>
       </ol>
     </section>
