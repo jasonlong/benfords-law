@@ -6,6 +6,7 @@
 $highlight_color: #d7ec33;
 $text_color: #8f8f8f;
 $link_color: #dcdcdc;
+$marker_color: #fe0086;
 
 $golden_ratio_small: 38%;
 $golden_ratio_large: 62%;
@@ -91,7 +92,7 @@ ol#chart {
   margin-top: 0.4em;
   li {
     position: relative;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
     font-size: 1.1em;
     line-height: 2;
 
@@ -105,6 +106,15 @@ ol#chart {
       height: 2em;
       background-color: $highlight_color;
       margin-right: 0.7em;
+    }
+
+    b {
+      line-height: 1;
+      position: absolute;
+      bottom: -0.8em;
+      font-family: "Helvetica Neue", arial, sans-serif;
+      font-size: 70%;
+      color: $marker_color;
     }
   }
 }
