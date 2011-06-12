@@ -225,34 +225,39 @@ table em {
   font-style: normal;
 }
 
+/* line 164, sass/screen.scss */
+table#stats + h6 {
+  margin-top: -0.8em;
+}
+
 @media screen and (max-width: 600px),
 screen and (max-device-width: 480px) {
-  /* line 167, sass/screen.scss */
+  /* line 170, sass/screen.scss */
   html {
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 175, sass/screen.scss */
+  /* line 178, sass/screen.scss */
   aside, section {
     float: none;
     width: auto;
     max-width: 100%;
   }
 
-  /* line 181, sass/screen.scss */
+  /* line 184, sass/screen.scss */
   footer {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 187, sass/screen.scss */
+  /* line 190, sass/screen.scss */
   body {
     margin: 1em auto;
   }
 
-  /* line 190, sass/screen.scss */
+  /* line 193, sass/screen.scss */
   h1 {
     font-size: 2.4em;
   }

@@ -159,7 +159,10 @@ table {
     color: $brighter_text_color;
     font-style: normal;
   }
+}
 
+table#stats + h6 {
+  margin-top: -0.8em;
 }
 
 @media screen and (max-width: 600px),
