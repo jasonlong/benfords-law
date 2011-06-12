@@ -149,20 +149,21 @@ section h6 {
 /* line 93, sass/screen.scss */
 ol#chart {
   margin-top: 0.4em;
+  margin-bottom: 2.5em;
 }
-/* line 95, sass/screen.scss */
+/* line 97, sass/screen.scss */
 ol#chart li {
   position: relative;
   margin-bottom: 0.8em;
   font-size: 1.1em;
   line-height: 2;
 }
-/* line 101, sass/screen.scss */
+/* line 103, sass/screen.scss */
 ol#chart li .digit {
   position: absolute;
   left: -1em;
 }
-/* line 106, sass/screen.scss */
+/* line 108, sass/screen.scss */
 ol#chart li .fill {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -176,7 +177,7 @@ ol#chart li .fill {
 ol#chart li .fill {
   *display: inline;
 }
-/* line 112, sass/screen.scss */
+/* line 114, sass/screen.scss */
 ol#chart li b {
   line-height: 1;
   position: absolute;
@@ -186,7 +187,7 @@ ol#chart li b {
   color: #fe0086;
 }
 
-/* line 123, sass/screen.scss */
+/* line 125, sass/screen.scss */
 table {
   width: 100%;
   background: #202020;
@@ -194,31 +195,31 @@ table {
   font-size: 1.1em;
   margin-bottom: 1em;
 }
-/* line 130, sass/screen.scss */
+/* line 132, sass/screen.scss */
 table th, table td {
   padding: 0.1em 1.5em;
 }
-/* line 135, sass/screen.scss */
+/* line 137, sass/screen.scss */
 table thead th {
   padding-top: 1em;
 }
-/* line 140, sass/screen.scss */
+/* line 142, sass/screen.scss */
 table tfoot {
   color: #d7ec33;
   font-size: 0.8em;
 }
-/* line 144, sass/screen.scss */
+/* line 146, sass/screen.scss */
 table tfoot td {
   padding-top: 0.5em;
   padding-bottom: 1em;
   padding-left: 1.9em;
 }
-/* line 151, sass/screen.scss */
+/* line 153, sass/screen.scss */
 table th {
   text-transform: uppercase;
   color: #d9d9d9;
 }
-/* line 156, sass/screen.scss */
+/* line 158, sass/screen.scss */
 table em {
   color: #d9d9d9;
   font-style: normal;
@@ -226,32 +227,32 @@ table em {
 
 @media screen and (max-width: 600px),
 screen and (max-device-width: 480px) {
-  /* line 165, sass/screen.scss */
+  /* line 167, sass/screen.scss */
   html {
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 173, sass/screen.scss */
+  /* line 175, sass/screen.scss */
   aside, section {
     float: none;
     width: auto;
     max-width: 100%;
   }
 
-  /* line 179, sass/screen.scss */
+  /* line 181, sass/screen.scss */
   footer {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 185, sass/screen.scss */
+  /* line 187, sass/screen.scss */
   body {
     margin: 1em auto;
   }
 
-  /* line 188, sass/screen.scss */
+  /* line 190, sass/screen.scss */
   h1 {
     font-size: 2.4em;
   }
