@@ -7,6 +7,7 @@ $highlight_color: #d7ec33;
 $text_color: #8f8f8f;
 $link_color: #dcdcdc;
 $marker_color: #fe0086;
+$brighter_text_color: #d9d9d9;
 
 $golden_ratio_small: 38%;
 $golden_ratio_large: 62%;
@@ -80,6 +81,7 @@ section {
     font-size: 3em; 
     line-height: 0.9;
     color: #fefefe;
+    margin-top: 1em;
     margin-bottom: 0.5em;
   }
 
@@ -105,7 +107,6 @@ ol#chart {
       @include inline-block;
       height: 2em;
       background-color: $highlight_color;
-      margin-right: 0.7em;
     }
 
     b {
@@ -117,6 +118,46 @@ ol#chart {
       color: $marker_color;
     }
   }
+}
+
+table {
+  width: 100%;
+  background: #202020;
+  background: rgba(25, 25, 25, 0.52);
+  font-size: 1.1em;
+  margin-bottom: 1em;
+
+  th, td {
+    padding: 0.1em 1.5em;
+  }
+  
+  thead {
+    th {
+      padding-top: 1em;
+    }
+  }
+  
+  tfoot {
+    color: $highlight_color;
+    font-size: 0.8em;
+
+    td {
+      padding-top: 0.5em;
+      padding-bottom: 1em;
+      padding-left: 1.9em;
+    }
+  }
+
+  th {
+    text-transform: uppercase;
+    color: $brighter_text_color;
+  }
+
+  em {
+    color: $brighter_text_color;
+    font-style: normal;
+  }
+
 }
 
 @media screen and (max-width: 600px),

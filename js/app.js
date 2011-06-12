@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, adjustFooter, getDataset, placeBenfordMarkers, populateDatasetOptions;
+  var BENFORD_VALUES, adjustFooter, getDataset, initChart, placeBenfordMarkers, populateDatasetOptions;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -12,6 +12,7 @@
     9: 4.6
   };
   $(document).ready(function() {
+    initChart();
     adjustFooter();
     populateDatasetOptions();
     getDataset('twitter');
@@ -23,9 +24,14 @@
   $(window).resize(function() {
     return adjustFooter();
   });
+  initChart = function() {
+    return $('ol#chart li').each(function(index) {
+      $('<span></span>').appendTo($(this));
+      return $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
+    });
+  };
   placeBenfordMarkers = function() {
     return $('ol#chart li').each(function(index) {
-      $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
       return $('<b>▲</b>').css('left', BENFORD_VALUES[index + 1] * 2 + '%').appendTo($(this));
     });
   };
@@ -54,7 +60,7 @@
         var element;
         element = $('ol#chart li::nth-child(' + key + ') .fill');
         element.width(val * 2 + '%');
-        return element.next('.percentage').html(val + '%');
+        return element.next('span').html(val + '%');
       });
     });
   };

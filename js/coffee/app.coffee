@@ -13,20 +13,25 @@ BENFORD_VALUES = {
 }
 
 $(document).ready ->
+  initChart()
   adjustFooter()
   populateDatasetOptions()
-  getDataset('twitter')
+  getDataset 'twitter'
   placeBenfordMarkers()
 
   $('#dataset-options').change ->
-    getDataset($(this).val())
+    getDataset $(@).val()
 
 $(window).resize ->
   adjustFooter()
 
+initChart = ->
+  $('ol#chart li').each (index) ->
+    $('<span></span>').appendTo $(@)
+    $('<span class="digit">'+ (index + 1) + '</span>').prependTo $(@)
+
 placeBenfordMarkers = ->
   $('ol#chart li').each (index) ->
-    $('<span class="digit">'+ (index + 1) + '</span>').prependTo $(@)
     $('<b>▲</b>').css('left', BENFORD_VALUES[index+1]*2 + '%').appendTo $(@)
 
 adjustFooter = ->
@@ -51,4 +56,4 @@ getDataset = (name) ->
     $.each data, (key, val) ->
       element = $('ol#chart li::nth-child('+key+') .fill')
       element.width(val*2 + '%')
-      element.next('.percentage').html(val+'%')
+      element.next('span').html(val+'%')

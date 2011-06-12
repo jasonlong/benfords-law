@@ -64,7 +64,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 15, sass/screen.scss */
+/* line 16, sass/screen.scss */
 body {
   background: #232323 url(/images/bg/body.png) 0 0 repeat;
   font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
@@ -76,24 +76,24 @@ body {
   *zoom: 1;
 }
 
-/* line 25, sass/screen.scss */
+/* line 26, sass/screen.scss */
 p {
   margin-bottom: 1em;
 }
 
-/* line 29, sass/screen.scss */
+/* line 30, sass/screen.scss */
 a {
   color: #dcdcdc;
   text-decoration: none;
   -webkit-transition-duration: .30s;
   -webkit-transition-property: background-color, color;
 }
-/* line 35, sass/screen.scss */
+/* line 36, sass/screen.scss */
 a:hover {
   color: #fff;
 }
 
-/* line 40, sass/screen.scss */
+/* line 41, sass/screen.scss */
 h1 {
   font-family: 'Oswald', 'Helvetica Neue', arial, serif;
   color: #dcdcdc;
@@ -101,67 +101,68 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 0.4em;
 }
-/* line 47, sass/screen.scss */
+/* line 48, sass/screen.scss */
 h1 b {
   color: #d7ec33;
   display: block;
 }
 
-/* line 54, sass/screen.scss */
+/* line 55, sass/screen.scss */
 dl dd {
   margin-bottom: 1em;
 }
 
-/* line 60, sass/screen.scss */
+/* line 61, sass/screen.scss */
 aside {
   float: left;
   width: 36%;
 }
-/* line 64, sass/screen.scss */
+/* line 65, sass/screen.scss */
 aside p {
   line-height: 1.1em;
 }
 
-/* line 69, sass/screen.scss */
+/* line 70, sass/screen.scss */
 footer {
   margin-top: 2em;
 }
 
-/* line 74, sass/screen.scss */
+/* line 75, sass/screen.scss */
 section {
   line-height: 1.1em;
   float: right;
   width: 60%;
 }
-/* line 79, sass/screen.scss */
+/* line 80, sass/screen.scss */
 section h2 {
   font-size: 3em;
   line-height: 0.9;
   color: #fefefe;
+  margin-top: 1em;
   margin-bottom: 0.5em;
 }
-/* line 86, sass/screen.scss */
+/* line 88, sass/screen.scss */
 section h6 {
   font-size: 0.9em;
 }
 
-/* line 91, sass/screen.scss */
+/* line 93, sass/screen.scss */
 ol#chart {
   margin-top: 0.4em;
 }
-/* line 93, sass/screen.scss */
+/* line 95, sass/screen.scss */
 ol#chart li {
   position: relative;
   margin-bottom: 0.8em;
   font-size: 1.1em;
   line-height: 2;
 }
-/* line 99, sass/screen.scss */
+/* line 101, sass/screen.scss */
 ol#chart li .digit {
   position: absolute;
   left: -1em;
 }
-/* line 104, sass/screen.scss */
+/* line 106, sass/screen.scss */
 ol#chart li .fill {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -170,13 +171,12 @@ ol#chart li .fill {
   *vertical-align: auto;
   height: 2em;
   background-color: #d7ec33;
-  margin-right: 0.7em;
 }
 /* line 7, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 ol#chart li .fill {
   *display: inline;
 }
-/* line 111, sass/screen.scss */
+/* line 112, sass/screen.scss */
 ol#chart li b {
   line-height: 1;
   position: absolute;
@@ -186,34 +186,72 @@ ol#chart li b {
   color: #fe0086;
 }
 
+/* line 123, sass/screen.scss */
+table {
+  width: 100%;
+  background: #202020;
+  background: rgba(25, 25, 25, 0.52);
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+/* line 130, sass/screen.scss */
+table th, table td {
+  padding: 0.1em 1.5em;
+}
+/* line 135, sass/screen.scss */
+table thead th {
+  padding-top: 1em;
+}
+/* line 140, sass/screen.scss */
+table tfoot {
+  color: #d7ec33;
+  font-size: 0.8em;
+}
+/* line 144, sass/screen.scss */
+table tfoot td {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  padding-left: 1.9em;
+}
+/* line 151, sass/screen.scss */
+table th {
+  text-transform: uppercase;
+  color: #d9d9d9;
+}
+/* line 156, sass/screen.scss */
+table em {
+  color: #d9d9d9;
+  font-style: normal;
+}
+
 @media screen and (max-width: 600px),
 screen and (max-device-width: 480px) {
-  /* line 124, sass/screen.scss */
+  /* line 165, sass/screen.scss */
   html {
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 132, sass/screen.scss */
+  /* line 173, sass/screen.scss */
   aside, section {
     float: none;
     width: auto;
     max-width: 100%;
   }
 
-  /* line 138, sass/screen.scss */
+  /* line 179, sass/screen.scss */
   footer {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 144, sass/screen.scss */
+  /* line 185, sass/screen.scss */
   body {
     margin: 1em auto;
   }
 
-  /* line 147, sass/screen.scss */
+  /* line 188, sass/screen.scss */
   h1 {
     font-size: 2.4em;
   }
