@@ -56,12 +56,15 @@
   };
   getDataset = function(name) {
     return $.getJSON('/js/datasets/' + name + '.json', function(data) {
-      return $.each(data, function(key, val) {
-        var element;
-        element = $('ol#chart li::nth-child(' + key + ') .fill');
-        element.width(val * 2 + '%');
-        return element.next('span').html(val + '%');
-      });
+      var element, num, value;
+      for (num = 1; num <= 9; num++) {
+        value = data[num];
+        element = $('ol#chart li::nth-child(' + num + ') .fill');
+        element.width(value * 2 + '%');
+        element.next('span').html(value + '%');
+      }
+      $('#data-source').text(data.source);
+      return $('#data-source').attr('href', data.source);
     });
   };
 }).call(this);
