@@ -56,7 +56,9 @@
   };
   getDataset = function(name) {
     return $.getJSON('/js/datasets/' + name + '.json', function(data) {
-      var element, num, value;
+      var description, element, num, value;
+      description = $('#dataset-options option:selected').text();
+      $('#dataset-description').text(description);
       for (num = 1; num <= 9; num++) {
         value = data[num];
         element = $('ol#chart li::nth-child(' + num + ') .fill');

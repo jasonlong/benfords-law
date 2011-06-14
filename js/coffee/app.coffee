@@ -53,10 +53,17 @@ populateDatasetOptions = ->
 
 getDataset = (name) ->
   $.getJSON '/js/datasets/'+name+'.json', (data) ->
+    # Set the chart description
+    description = $('#dataset-options option:selected').text()
+    $('#dataset-description').text(description)
+
+    # Populate the chart
     for num in [1..9]
       value = data[num]
       element = $('ol#chart li::nth-child('+num+') .fill')
       element.width(value*2 + '%')
       element.next('span').html(value+'%')
+
+    # Update the data source
     $('#data-source').text(data.source)
     $('#data-source').attr('href', data.source)
