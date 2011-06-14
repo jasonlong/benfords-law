@@ -58,6 +58,9 @@
     return $.getJSON('/js/datasets/' + name + '.json', function(data) {
       var description, element, num, value;
       description = $('#dataset-options option:selected').text();
+      if (description.length === 0) {
+        description = $('#dataset-options option:first').text();
+      }
       $('#dataset-description').text(description);
       for (num = 1; num <= 9; num++) {
         value = data[num];

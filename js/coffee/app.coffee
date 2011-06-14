@@ -55,6 +55,11 @@ getDataset = (name) ->
   $.getJSON '/js/datasets/'+name+'.json', (data) ->
     # Set the chart description
     description = $('#dataset-options option:selected').text()
+
+    # Default to grabbing the first one if nothing is "selected"
+    if description.length == 0
+      description = $('#dataset-options option:first').text()
+
     $('#dataset-description').text(description)
 
     # Populate the chart
