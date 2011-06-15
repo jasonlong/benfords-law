@@ -16,11 +16,8 @@ $(document).ready ->
   initChart()
   adjustFooter()
   populateDatasetOptions()
+  observeDatasetOptions()
   getDataset 'twitter'
-  placeBenfordMarkers()
-
-  $('#dataset-options').change ->
-    getDataset $(@).val()
 
 $(window).resize ->
   adjustFooter()
@@ -29,10 +26,11 @@ initChart = ->
   $('ol#chart li').each (index) ->
     $('<span></span>').appendTo $(@)
     $('<span class="digit">'+ (index + 1) + '</span>').prependTo $(@)
+    $('<b>▲</b>').appendTo $(@)
 
-placeBenfordMarkers = ->
-  $('ol#chart li').each (index) ->
-    $('<b>▲</b>').css('left', BENFORD_VALUES[index+1]*2 + '%').appendTo $(@)
+placeBenfordMarkers = (multiplier) ->
+  $('ol#chart li b').each (index) ->
+    $(@).css('left', BENFORD_VALUES[index+1] * multiplier + '%')
 
 adjustFooter = ->
   if $('section').css('float') is "none" and $('body').hasClass('single-column') is false
@@ -51,6 +49,10 @@ populateDatasetOptions = ->
 
     $('#dataset-options').html(items.join(''))
 
+observeDatasetOptions = ->
+  $('#dataset-options').change ->
+    getDataset $(@).val()
+
 getDataset = (name) ->
   $.getJSON '/js/datasets/'+name+'.json', (data) ->
     # Set the chart description
@@ -62,13 +64,25 @@ getDataset = (name) ->
 
     $('#dataset-description').text(description)
 
+    multiplier = getMultiplierForDataset data
+
     # Populate the chart
     for num in [1..9]
-      value = data[num]
+      value = data.values[num]
       element = $('ol#chart li::nth-child('+num+') .fill')
-      element.width(value*2 + '%')
+      element.width(value * multiplier + '%')
       element.next('span').html(value+'%')
 
     # Update the data source
     $('#data-source').text(data.source)
     $('#data-source').attr('href', data.source)
+
+    placeBenfordMarkers(multiplier)
+
+getMultiplierForDataset = (dataset) ->
+  max = 0
+  $.each dataset.values, (key, val) ->
+    max = val if val > max
+
+  return 85/max
+

@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, adjustFooter, getDataset, initChart, placeBenfordMarkers, populateDatasetOptions;
+  var BENFORD_VALUES, adjustFooter, getDataset, getMultiplierForDataset, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -15,11 +15,8 @@
     initChart();
     adjustFooter();
     populateDatasetOptions();
-    getDataset('twitter');
-    placeBenfordMarkers();
-    return $('#dataset-options').change(function() {
-      return getDataset($(this).val());
-    });
+    observeDatasetOptions();
+    return getDataset('twitter');
   });
   $(window).resize(function() {
     return adjustFooter();
@@ -27,12 +24,13 @@
   initChart = function() {
     return $('ol#chart li').each(function(index) {
       $('<span></span>').appendTo($(this));
-      return $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
+      $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
+      return $('<b>▲</b>').appendTo($(this));
     });
   };
-  placeBenfordMarkers = function() {
-    return $('ol#chart li').each(function(index) {
-      return $('<b>▲</b>').css('left', BENFORD_VALUES[index + 1] * 2 + '%').appendTo($(this));
+  placeBenfordMarkers = function(multiplier) {
+    return $('ol#chart li b').each(function(index) {
+      return $(this).css('left', BENFORD_VALUES[index + 1] * multiplier + '%');
     });
   };
   adjustFooter = function() {
@@ -54,22 +52,39 @@
       return $('#dataset-options').html(items.join(''));
     });
   };
+  observeDatasetOptions = function() {
+    return $('#dataset-options').change(function() {
+      return getDataset($(this).val());
+    });
+  };
   getDataset = function(name) {
     return $.getJSON('/js/datasets/' + name + '.json', function(data) {
-      var description, element, num, value;
+      var description, element, multiplier, num, value;
       description = $('#dataset-options option:selected').text();
       if (description.length === 0) {
         description = $('#dataset-options option:first').text();
       }
       $('#dataset-description').text(description);
+      multiplier = getMultiplierForDataset(data);
       for (num = 1; num <= 9; num++) {
-        value = data[num];
+        value = data.values[num];
         element = $('ol#chart li::nth-child(' + num + ') .fill');
-        element.width(value * 2 + '%');
+        element.width(value * multiplier + '%');
         element.next('span').html(value + '%');
       }
       $('#data-source').text(data.source);
-      return $('#data-source').attr('href', data.source);
+      $('#data-source').attr('href', data.source);
+      return placeBenfordMarkers(multiplier);
     });
+  };
+  getMultiplierForDataset = function(dataset) {
+    var max;
+    max = 0;
+    $.each(dataset.values, function(key, val) {
+      if (val > max) {
+        return max = val;
+      }
+    });
+    return 85 / max;
   };
 }).call(this);

@@ -109,6 +109,7 @@ ol#chart {
       @include inline-block;
       height: 2em;
       background-color: $highlight_color;
+      margin-right: 0.5em;
     }
 
     b {
