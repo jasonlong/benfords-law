@@ -315,16 +315,17 @@ screen and (max-device-width: 480px) {
   /* line 229, sass/screen.scss */
   p#benford-prediction {
     text-align: left;
-    margin-top: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 236, sass/screen.scss */
+  /* line 237, sass/screen.scss */
   body {
     margin: 1em auto;
   }
 
-  /* line 239, sass/screen.scss */
+  /* line 240, sass/screen.scss */
   h1 {
     font-size: 2.4em;
   }
