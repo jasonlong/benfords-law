@@ -1,6 +1,6 @@
 @import "compass/reset";
 @import "compass/utilities/general/clearfix";
-@import "compass/css3/inline-block";
+@import "compass/css3";
 
 // variables
 $highlight_color: #d7ec33;
@@ -88,6 +88,15 @@ section {
   h6 {
     font-size: 0.9em;
   }
+}
+
+#dataset-wrapper {
+  background: #202020;
+  background: rgba(25, 25, 25, 0.52);
+  padding: 0.3em 0.3em;
+  margin-top: 0.3em;
+  @include inline-block;
+  @include border-radius(5px);
 }
 
 ol#chart {
