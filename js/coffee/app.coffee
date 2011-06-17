@@ -84,5 +84,5 @@ getMultiplierForDataset = (dataset) ->
   $.each dataset.values, (key, val) ->
     max = val if val > max
 
-  return 85/max
+  return 82/max
 

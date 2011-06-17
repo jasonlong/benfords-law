@@ -85,6 +85,6 @@
         return max = val;
       }
     });
-    return 85 / max;
+    return 82 / max;
   };
 }).call(this);
