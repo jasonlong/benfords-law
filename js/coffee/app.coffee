@@ -12,6 +12,8 @@ BENFORD_VALUES = {
   9: 4.6
 }
 
+MAX_CHART_WIDTH_PERCENTAGE = 81
+
 $(document).ready ->
   initChart()
   adjustFooter()
@@ -84,5 +86,5 @@ getMultiplierForDataset = (dataset) ->
   $.each dataset.values, (key, val) ->
     max = val if val > max
 
-  return 82/max
+  return MAX_CHART_WIDTH_PERCENTAGE/max
 

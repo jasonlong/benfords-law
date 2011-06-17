@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, adjustFooter, getDataset, getMultiplierForDataset, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions;
+  var BENFORD_VALUES, MAX_CHART_WIDTH_PERCENTAGE, adjustFooter, getDataset, getMultiplierForDataset, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -11,6 +11,7 @@
     8: 5.1,
     9: 4.6
   };
+  MAX_CHART_WIDTH_PERCENTAGE = 81;
   $(document).ready(function() {
     initChart();
     adjustFooter();
@@ -85,6 +86,6 @@
         return max = val;
       }
     });
-    return 82 / max;
+    return MAX_CHART_WIDTH_PERCENTAGE / max;
   };
 }).call(this);

@@ -101,7 +101,6 @@ section {
 
 ol#chart {
   margin-top: 0.4em;
-  margin-bottom: 2.5em;
 
   li {
     position: relative;
@@ -129,6 +128,18 @@ ol#chart {
       font-size: 70%;
       color: $marker_color;
     }
+  }
+}
+
+p#benford-prediction {
+  text-align: right;
+  font-size: 0.8em;
+  margin-top: -1.8em;
+  margin-bottom: 2.5em;
+  
+  b {
+    font-size: 70%;
+    color: $marker_color;
   }
 }
 
@@ -169,6 +180,26 @@ table {
     color: $brighter_text_color;
     font-style: normal;
   }
+
+}
+
+table#stats {
+  font-size: 1.2em;
+  td {
+    padding: 0.2em 1.5em;
+  }
+  tr:first-child td {
+    padding-top: 1.5em;
+  }
+  tr:last-child td {
+    padding-bottom: 1.5em;
+  }
+  td:first-child {
+    width: 40%;
+  }
+  td:nth-child(2) {
+    color: $highlight_color;
+  }
 }
 
 table#stats + h6 {
@@ -193,6 +224,11 @@ screen and (max-device-width: 480px) {
 
   footer {
     display: none;
+  }
+
+  p#benford-prediction {
+    text-align: left;
+    margin-top: 1em;
   }
 }
 
