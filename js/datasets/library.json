@@ -1,0 +1,17 @@
+{
+  "values": {
+    "1": 33.73,
+    "2": 17.86,
+    "3": 11.07,
+    "4": 8.65,
+    "5": 7.67,
+    "6": 5.98,
+    "7": 5.25,
+    "8": 5.29,
+    "9":4.50
+  },
+  "num_records": "9241",
+  "min_value": "10",
+  "max_value": "21,611,832",
+  "source": "http://explore.data.gov/Social-Insurance-and-Human-Services/Public-Libraries-Survey-Fiscal-Year-2008/nmjm-cdkr"
+}
