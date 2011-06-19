@@ -75,6 +75,11 @@ getDataset = (name) ->
       element.width(value * multiplier + '%')
       element.next('span').html(value+'%')
 
+    # Update various stats
+    $('#num-records').text(data.num_records)
+    $('#min-value').text(data.min_value)
+    $('#max-value').text(data.max_value)
+
     # Update the data source
     $('#data-source').text(data.source)
     $('#data-source').attr('href', data.source)

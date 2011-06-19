@@ -10,5 +10,8 @@
     "8": 7.0,
     "9": 4.0
   },
+  "num_records": "300",
+  "min_value": "4",
+  "max_value": "3000",
   "source": "http://www.atlasoftheuniverse.com/stars.html"
 }

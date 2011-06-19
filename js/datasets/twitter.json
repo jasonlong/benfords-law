@@ -10,5 +10,8 @@
     "8": 5.14,
     "9": 4.56
   },
+  "num_records": "38,670,514",
+  "min_value": "1",
+  "max_value": "4,706,631",
   "source": "http://www.infochimps.com/datasets/twitter-census-twitter-users-by-friends-count"
 }

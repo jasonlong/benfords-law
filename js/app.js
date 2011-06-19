@@ -73,6 +73,9 @@
         element.width(value * multiplier + '%');
         element.next('span').html(value + '%');
       }
+      $('#num-records').text(data.num_records);
+      $('#min-value').text(data.min_value);
+      $('#max-value').text(data.max_value);
       $('#data-source').text(data.source);
       $('#data-source').attr('href', data.source);
       return placeBenfordMarkers(multiplier);
