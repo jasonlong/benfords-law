@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, MAX_CHART_WIDTH_PERCENTAGE, adjustFooter, getDataset, getMultiplierForDataset, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions;
+  var BENFORD_VALUES, MAX_CHART_WIDTH_PERCENTAGE, adjustFooter, drawChart, getDataset, getMultiplierForDataset, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions, zeroChart;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -26,12 +26,12 @@
     return $('ol#chart li').each(function(index) {
       $('<span></span>').appendTo($(this));
       $('<span class="digit">' + (index + 1) + '</span>').prependTo($(this));
-      return $('<b>▲</b>').appendTo($(this));
+      return $('<b>▲</b>').hide().appendTo($(this));
     });
   };
   placeBenfordMarkers = function(multiplier) {
     return $('ol#chart li b').each(function(index) {
-      return $(this).css('left', BENFORD_VALUES[index + 1] * multiplier + '%');
+      return $(this).css('left', BENFORD_VALUES[index + 1] * multiplier + '%').fadeIn('fast');
     });
   };
   adjustFooter = function() {
@@ -55,30 +55,57 @@
   };
   observeDatasetOptions = function() {
     return $('#dataset-options').change(function() {
-      return getDataset($(this).val());
+      return zeroChart($(this).val());
     });
+  };
+  zeroChart = function(nextDataset) {
+    $('table#stats td:nth-child(2)').fadeOut('fast');
+    $('#data-source').fadeOut('fast');
+    $('ol#chart li').each(function(index) {
+      $(this).find('.fill').next('span').fadeOut('fast');
+      $(this).find('b').fadeOut('fast');
+      return $(this).find('.fill').animate({
+        width: 0
+      }, {
+        duration: 400
+      });
+    });
+    return getDataset(nextDataset);
+  };
+  drawChart = function(data, multiplier) {
+    $('ol#chart li').each(function(index) {
+      var value;
+      value = data.values[index + 1];
+      return $(this).find('.fill').animate({
+        width: value * multiplier + '%'
+      }, {
+        duration: 400,
+        complete: function() {
+          return $(this).next('span').html(value + '%');
+        }
+      });
+    });
+    return setTimeout(function() {
+      $('ol#chart li .fill').next('span').fadeIn('fast');
+      $('table#stats td:nth-child(2)').fadeIn('fast');
+      $('#data-source').fadeIn('fast');
+      return placeBenfordMarkers(multiplier);
+    }, 1000);
   };
   getDataset = function(name) {
     return $.getJSON('/js/datasets/' + name + '.json', function(data) {
-      var description, element, multiplier, num, value;
+      var description, multiplier;
       description = $('#dataset-options option:selected').text();
       if (description.length === 0) {
         description = $('#dataset-options option:first').text();
       }
       $('#dataset-description').text(description);
       multiplier = getMultiplierForDataset(data);
-      for (num = 1; num <= 9; num++) {
-        value = data.values[num];
-        element = $('ol#chart li::nth-child(' + num + ') .fill');
-        element.width(value * multiplier + '%');
-        element.next('span').html(value + '%');
-      }
       $('#num-records').text(data.num_records);
       $('#min-value').text(data.min_value);
       $('#max-value').text(data.max_value);
-      $('#data-source').text(data.source);
-      $('#data-source').attr('href', data.source);
-      return placeBenfordMarkers(multiplier);
+      $('#data-source').text(data.source).attr('href', data.source);
+      return drawChart(data, multiplier);
     });
   };
   getMultiplierForDataset = function(dataset) {

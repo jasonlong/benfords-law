@@ -28,11 +28,11 @@ initChart = ->
   $('ol#chart li').each (index) ->
     $('<span></span>').appendTo $(@)
     $('<span class="digit">'+ (index + 1) + '</span>').prependTo $(@)
-    $('<b>▲</b>').appendTo $(@)
+    $('<b>▲</b>').hide().appendTo $(@)
 
 placeBenfordMarkers = (multiplier) ->
   $('ol#chart li b').each (index) ->
-    $(@).css('left', BENFORD_VALUES[index+1] * multiplier + '%')
+    $(@).css('left', BENFORD_VALUES[index+1] * multiplier + '%').fadeIn('fast')
 
 adjustFooter = ->
   if $('section').css('float') is "none" and $('body').hasClass('single-column') is false
@@ -53,7 +53,41 @@ populateDatasetOptions = ->
 
 observeDatasetOptions = ->
   $('#dataset-options').change ->
-    getDataset $(@).val()
+    zeroChart $(@).val()
+
+zeroChart = (nextDataset) ->
+  $('table#stats td:nth-child(2)').fadeOut('fast')
+  $('#data-source').fadeOut('fast')
+  $('ol#chart li').each (index) ->
+    $(@).find('.fill').next('span').fadeOut('fast')
+    $(@).find('b').fadeOut('fast')
+    $(@).find('.fill').animate({
+      width: 0
+    }, {
+      duration: 400
+    })
+
+  getDataset nextDataset
+
+
+drawChart = (data, multiplier) ->
+  $('ol#chart li').each (index) ->
+    value = data.values[index + 1]
+    $(@).find('.fill').animate({
+      width: value * multiplier + '%' 
+      }, {
+      duration: 400
+      complete: ->
+        $(@).next('span').html(value+'%')
+    })
+
+  setTimeout ->
+    $('ol#chart li .fill').next('span').fadeIn('fast')
+    $('table#stats td:nth-child(2)').fadeIn('fast')
+    $('#data-source').fadeIn('fast')
+    placeBenfordMarkers multiplier
+  , 1000
+
 
 getDataset = (name) ->
   $.getJSON '/js/datasets/'+name+'.json', (data) ->
@@ -68,23 +102,16 @@ getDataset = (name) ->
 
     multiplier = getMultiplierForDataset data
 
-    # Populate the chart
-    for num in [1..9]
-      value = data.values[num]
-      element = $('ol#chart li::nth-child('+num+') .fill')
-      element.width(value * multiplier + '%')
-      element.next('span').html(value+'%')
-
     # Update various stats
     $('#num-records').text(data.num_records)
     $('#min-value').text(data.min_value)
     $('#max-value').text(data.max_value)
 
     # Update the data source
-    $('#data-source').text(data.source)
-    $('#data-source').attr('href', data.source)
+    $('#data-source').text(data.source).attr('href', data.source)
 
-    placeBenfordMarkers(multiplier)
+    drawChart(data, multiplier)
+
 
 getMultiplierForDataset = (dataset) ->
   max = 0
