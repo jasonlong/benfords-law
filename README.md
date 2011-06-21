@@ -8,7 +8,9 @@ If you find this to be an interesting idea, we'd encourage you to help add more 
 
 To contribute a new dataset, you'll need to do two things:
 
-1. Add the dataset name to `js/datasets/index.json`. The format is simply a key/value pair:
+### Add the dataset name to the JSON index file
+
+The format of `js/datasets/index.json` is simply a key/value pair:
 
 	{
 		"twitter": "Twitter users by followers count",
@@ -18,7 +20,9 @@ To contribute a new dataset, you'll need to do two things:
 		"spain": "Population of Spanish cities"
 	}
 
-2. Create a new .json file in `/js/datasets/` that matches the key used in step 1. The format looks like this:
+### Create a dataset JSON file
+
+Add your new file in the `/js/datasets/` directory with a name that matches the key used in step 1. The format looks like this:
 
 	{
 		"values": {
