@@ -104,6 +104,7 @@
       $('#num-records').text(data.num_records);
       $('#min-value').text(data.min_value);
       $('#max-value').text(data.max_value);
+      $('#orders-of-magnitude').text(data.magnitude);
       $('#data-source').text(data.source).attr('href', data.source);
       return drawChart(data, multiplier);
     });
