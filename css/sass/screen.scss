@@ -87,12 +87,20 @@ section {
   float: right;
   width: $golden_ratio_large - ($gutter_size / 2);
 
-  h2 {
-    font-size: 3em; 
-    line-height: 0.9;
-    color: #fefefe;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  header {
+    margin-top: 0.6em;
+    min-height: 7em;
+    position: relative;
+
+    h2 {
+      font-size: 3em; 
+      line-height: 0.9;
+      color: #fefefe;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   h6 {
