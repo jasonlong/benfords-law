@@ -13,6 +13,5 @@
   "num_records": "165,450",
   "min_value": "25",
   "max_value": "10,000",
-  "magnitude": "3",
   "source": "http://build.kiva.org/docs/data/snapshots"
 }

@@ -13,6 +13,5 @@
   "num_records": "300",
   "min_value": "4",
   "max_value": "3000",
-  "magnitude": "3",
   "source": "http://www.atlasoftheuniverse.com/stars.html"
 }

@@ -127,7 +127,7 @@ aside p {
 }
 /* line 72, sass/screen.scss */
 aside p.github {
-  background: transparent url(/images/octocat.png) 0% 50% no-repeat;
+  background: transparent url(/images/octocat.png) 0% 20% no-repeat;
   padding-left: 1.7em;
 }
 
@@ -308,7 +308,7 @@ screen and (max-device-width: 480px) {
     -webkit-text-size-adjust: none;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   /* line 227, sass/screen.scss */
   aside, section {
     float: none;

@@ -66,10 +66,9 @@ zeroChart = (nextDataset) ->
       width: 0
     }, {
       duration: 400
+      complete: ->
+        getDataset nextDataset if index == 8
     })
-
-  getDataset nextDataset
-
 
 drawChart = (data, multiplier) ->
   $('ol#chart li').each (index) ->
@@ -80,15 +79,12 @@ drawChart = (data, multiplier) ->
       duration: 400
       complete: ->
         $(@).next('span').html(value+'%')
+        if index == 8
+          $('ol#chart li .fill').next('span').fadeIn('fast')
+          $('table#stats td:nth-child(2)').fadeIn('fast')
+          $('#data-source').fadeIn('fast')
+          placeBenfordMarkers multiplier
     })
-
-  setTimeout ->
-    $('ol#chart li .fill').next('span').fadeIn('fast')
-    $('table#stats td:nth-child(2)').fadeIn('fast')
-    $('#data-source').fadeIn('fast')
-    placeBenfordMarkers multiplier
-  , 1000
-
 
 getDataset = (name) ->
   $.getJSON '/js/datasets/'+name+'.json', (data) ->
@@ -107,13 +103,12 @@ getDataset = (name) ->
     $('#num-records').text(data.num_records)
     $('#min-value').text(data.min_value)
     $('#max-value').text(data.max_value)
-    $('#orders-of-magnitude').text(data.magnitude)
+    $('#orders-of-magnitude').text(getOrdersOfMagnitudeBetween(data.min_value, data.max_value))
 
     # Update the data source
     $('#data-source').text(data.source).attr('href', data.source)
 
     drawChart(data, multiplier)
-
 
 getMultiplierForDataset = (dataset) ->
   max = 0
@@ -122,3 +117,7 @@ getMultiplierForDataset = (dataset) ->
 
   return MAX_CHART_WIDTH_PERCENTAGE/max
 
+getOrdersOfMagnitudeBetween = (min, max) ->
+  min = parseInt(min.replace(/,/g, ""))
+  max = parseInt(max.replace(/,/g, ""))
+  return Math.floor(Math.LOG10E * Math.log(max - min))
