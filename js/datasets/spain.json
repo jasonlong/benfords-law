@@ -13,5 +13,6 @@
   "num_records": "8114",
   "min_value": "5",
   "max_value": "3,255,944",
+  "magnitude": "6",
   "source": "http://www.infochimps.com/datasets/all-villages-and-cities-in-spain-with-population-and-area-in-squ"
 }

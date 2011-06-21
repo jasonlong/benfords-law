@@ -75,7 +75,7 @@ drawChart = (data, multiplier) ->
   $('ol#chart li').each (index) ->
     value = data.values[index + 1]
     $(@).find('.fill').animate({
-      width: value * multiplier + '%' 
+      width: value * multiplier + '%'
       }, {
       duration: 400
       complete: ->
@@ -107,6 +107,7 @@ getDataset = (name) ->
     $('#num-records').text(data.num_records)
     $('#min-value').text(data.min_value)
     $('#max-value').text(data.max_value)
+    $('#orders-of-magnitude').text(data.magnitude)
 
     # Update the data source
     $('#data-source').text(data.source).attr('href', data.source)
