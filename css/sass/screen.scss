@@ -35,12 +35,18 @@ p {
 a {
   color: $link_color;
   text-decoration: none;
+  border-bottom: dotted 1px #555;
   -webkit-transition-duration: .30s;
   -webkit-transition-property: background-color, color;
 
   &:hover {
     color: #fff;
+    border-bottom: solid 1px #777;
   }
+}
+
+em {
+  color: $brighter_text_color;
 }
 
 h1 { 
