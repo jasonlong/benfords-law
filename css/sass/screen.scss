@@ -20,6 +20,9 @@ body {
   font-size: 0.84em;
   width: 90%;
   margin: 3em auto;
+}
+
+#container {
   @include clearfix;
 }
 

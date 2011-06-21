@@ -22,120 +22,122 @@
   </head>
 
   <body>
-    <aside>
-      <h1>Testing <b>Benford's Law</b></h1>
+    <div id="container">
+      <aside>
+        <h1>Testing <b>Benford's Law</b></h1>
 
-      <p>Imagine a large dataset, say something like a list of every country
-      and its population.</p>
+        <p>Imagine a large dataset, say something like a list of every country
+        and its population.</p>
 
-      <table>
-        <thead>
+        <table>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Population</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Afghanistan</td>
+              <td><em>2</em>9,117,000</td>
+            </tr>
+            <tr>
+              <td>Albania</td>
+              <td><em>3</em>,195,000</td>
+            </tr>
+            <tr>
+              <td>Algeria</td>
+              <td><em>3</em>5,423,000</td>
+            </tr>
+            <tr>
+              <td>Andorra</td>
+              <td><em>8</em>4,082</td>
+            </tr>
+            <tr>
+              <td>Angola</td>
+              <td><em>1</em>8,993,000</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&uarr; Leading digit</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Chances are, the leading digit will be a 1 more often than a 2. And 2s would probably occur more often than 3s and so on.</p>
+
+        <p>This odd phenonenom is Benford's Law. If a set of values were truly random, the leading digits would be distributed with about 11% for each value, but Benford's Law predicts a logrithmic distribution. It occurs so regularly that it is used in fradulent accounting detection.</p>
+        
+        <p>See the <a href="http://en.wikipedia.org/wiki/Benfords_law">Wikipedia article</a>
+        for a more thorough discussion.</p>
+
+        <p>This is a simple experiment to see how many large, publicly accessible datasets satisfy Benford’s Law.</p>
+
+        <p class="highlight">This site is on Github. Please <a href="https://github.com/blackant/benfords-law">help out by forking the project and adding more datasets</a>.</p>
+
+        <footer>
+          <p>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="jasonlong" data-related="brycethornton">Tweet</a>
+            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+          </p>
+
+          <dl id="credits">
+            <dt>Concept, Design, &amp; Frontend Development</dt>
+            <dd><a href="http://twitter.com/jasonlong">@jasonlong</a></dd>
+
+            <dt>Frontend Development &amp; Data Crunching</dt>
+            <dd><a href="http://twitter.com/brycethornton">@brycethornton</a></dd>
+          </dl>
+        </footer>
+      </aside>
+
+      <section>
+        <h6>Available Datasets</h6>
+        <span id="dataset-wrapper"><select id="dataset-options"></select></span>
+
+        <h2 id="dataset-description"></h2>
+
+        <h6>Leading digit frequency</h6>
+
+        <ol id="chart">
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+          <li><span class="fill" data-value="0"></span></li>
+        </ol>
+        <p id="benford-prediction"><b>▲</b> Predicted by Benford's Law</p>
+
+        <table id="stats">
           <tr>
-            <th>Country</th>
-            <th>Population</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Afghanistan</td>
-            <td><em>2</em>9,117,000</td>
+            <td>Number of Records</td>
+            <td id="num-records"></td>
           </tr>
           <tr>
-            <td>Albania</td>
-            <td><em>3</em>,195,000</td>
+            <td>Min Value</td>
+            <td id="min-value"></td>
           </tr>
           <tr>
-            <td>Algeria</td>
-            <td><em>3</em>5,423,000</td>
+            <td>Max Value</td>
+            <td id="max-value"></td>
           </tr>
           <tr>
-            <td>Andorra</td>
-            <td><em>8</em>4,082</td>
+            <td>Orders of Magnitude</td>
+            <td id="orders-of-magnitude">456</td>
           </tr>
-          <tr>
-            <td>Angola</td>
-            <td><em>1</em>8,993,000</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&uarr; Leading digit</td>
-          </tr>
-        </tfoot>
-      </table>
+        </table>
 
-      <p>Chances are, the leading digit will be a 1 more often than a 2. And 2s would probably occur more often than 3s and so on.</p>
+        <h6>Data Source:</h6>
+        <p><a id="data-source" href="#"></a></p>
 
-      <p>This odd phenonenom is Benford's Law. If a set of values were truly random, the leading digits would be distributed with about 11% for each value, but Benford's Law predicts a logrithmic distribution. It occurs so regularly that it is used in fradulent accounting detection.</p>
-      
-      <p>See the <a href="http://en.wikipedia.org/wiki/Benfords_law">Wikipedia article</a>
-      for a more thorough discussion.</p>
-
-      <p>This is a simple experiment to see how many large, publicly accessible datasets satisfy Benford’s Law.</p>
-
-      <p class="highlight">This site is on Github. Please <a href="https://github.com/blackant/benfords-law">help out by forking the project and adding more datasets</a>.</p>
-
-      <footer>
-        <p>
-          <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="jasonlong" data-related="brycethornton">Tweet</a>
-          <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-        </p>
-
-        <dl id="credits">
-          <dt>Concept, Design, &amp; Frontend Development</dt>
-          <dd><a href="http://twitter.com/jasonlong">@jasonlong</a></dd>
-
-          <dt>Frontend Development &amp; Data Crunching</dt>
-          <dd><a href="http://twitter.com/brycethornton">@brycethornton</a></dd>
-        </dl>
-      </footer>
-    </aside>
-
-    <section>
-      <h6>Available Datasets</h6>
-      <span id="dataset-wrapper"><select id="dataset-options"></select></span>
-
-      <h2 id="dataset-description"></h2>
-
-      <h6>Leading digit frequency</h6>
-
-      <ol id="chart">
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-        <li><span class="fill" data-value="0"></span></li>
-      </ol>
-      <p id="benford-prediction"><b>▲</b> Predicted by Benford's Law</p>
-
-      <table id="stats">
-        <tr>
-          <td>Number of Records</td>
-          <td id="num-records"></td>
-        </tr>
-        <tr>
-          <td>Min Value</td>
-          <td id="min-value"></td>
-        </tr>
-        <tr>
-          <td>Max Value</td>
-          <td id="max-value"></td>
-        </tr>
-        <tr>
-          <td>Orders of Magnitude</td>
-          <td id="orders-of-magnitude">456</td>
-        </tr>
-      </table>
-
-      <h6>Data Source:</h6>
-      <p><a id="data-source" href="#"></a></p>
-
-    </section>
+      </section>
+    </div>
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>

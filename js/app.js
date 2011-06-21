@@ -15,9 +15,7 @@
   $(document).ready(function() {
     initChart();
     adjustFooter();
-    populateDatasetOptions();
-    observeDatasetOptions();
-    return getDataset('twitter');
+    return populateDatasetOptions();
   });
   $(window).resize(function() {
     return adjustFooter();
@@ -50,7 +48,9 @@
       $.each(data, function(key, val) {
         return items.push('<option value="' + key + '">' + val + '</option>');
       });
-      return $('#dataset-options').html(items.join(''));
+      $('#dataset-options').html(items.join(''));
+      getDataset($('#dataset-options option:first').val());
+      return observeDatasetOptions();
     });
   };
   observeDatasetOptions = function() {

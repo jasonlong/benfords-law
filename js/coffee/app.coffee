@@ -18,8 +18,6 @@ $(document).ready ->
   initChart()
   adjustFooter()
   populateDatasetOptions()
-  observeDatasetOptions()
-  getDataset 'twitter'
 
 $(window).resize ->
   adjustFooter()
@@ -50,6 +48,9 @@ populateDatasetOptions = ->
       items.push '<option value="'+key+'">'+val+'</option>'
 
     $('#dataset-options').html(items.join(''))
+
+    getDataset $('#dataset-options option:first').val()
+    observeDatasetOptions()
 
 observeDatasetOptions = ->
   $('#dataset-options').change ->
