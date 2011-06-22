@@ -1,2 +1,356 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{background:#232323 url(/images/bg/body.png) 0 0 repeat;font-family:'Inconsolata', 'Helvetica Neue', arial, serif;color:#8f8f8f;font-size:0.84em;width:90%;margin:3em auto}#container{overflow:hidden;*zoom:1}p{margin-bottom:1em}a{color:#dcdcdc;text-decoration:none;border-bottom:dotted 1px #555;-webkit-transition-duration:.30s;-webkit-transition-property:background-color, color}a:hover{color:#fff;border-bottom:solid 1px #777}em{color:#d9d9d9}h1{font-family:'Oswald', 'Helvetica Neue', arial, serif;color:#dcdcdc;font-size:3.57em;text-transform:uppercase;margin-bottom:0.4em}h1 b{color:#d7ec33;display:block}dl dd{margin-bottom:1em}aside{float:left;width:36%}aside p{line-height:1.1em}aside p.github{background:transparent url(/images/octocat.png) 0% 20% no-repeat;padding-left:1.7em}footer{margin-top:2em}section{line-height:1.1em;float:right;width:60%}section header{margin-top:0.6em;min-height:7em;position:relative}section header h2{font-size:3em;line-height:0.9;color:#fefefe;margin-top:0.5em;margin-bottom:0.5em;position:absolute;bottom:0}section h6{font-size:0.9em}#dataset-wrapper{background:#202020;background:rgba(25, 25, 25, 0.52);padding:0.3em 0.3em;margin-top:0.3em;display:-moz-inline-box;-moz-box-orient:vertical;display:inline-block;vertical-align:middle;*vertical-align:auto;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;-khtml-border-radius:5px;border-radius:5px}#dataset-wrapper{*display:inline}ol#chart{margin-top:0.4em}ol#chart li{position:relative;margin-bottom:0.8em;font-size:1.1em;line-height:2}ol#chart li .digit{position:absolute;left:-1em}ol#chart li .fill{display:-moz-inline-box;-moz-box-orient:vertical;display:inline-block;vertical-align:middle;*vertical-align:auto;height:2em;background-color:#d7ec33;margin-right:0.5em}ol#chart li .fill{*display:inline}ol#chart li b{line-height:1;position:absolute;bottom:-0.8em;font-family:"Helvetica Neue", arial, sans-serif;font-size:70%;color:#fe0086}p#benford-prediction{text-align:right;font-size:0.8em;margin-top:-1.8em;margin-bottom:2.5em}p#benford-prediction b{font-size:70%;color:#fe0086}table{width:100%;background:#202020;background:rgba(25, 25, 25, 0.52);font-size:1.1em;margin-bottom:1em}table th,table td{padding:0.1em 1.5em}table thead th{padding-top:1em}table tfoot{color:#d7ec33;font-size:0.8em}table tfoot td{padding-top:0.5em;padding-bottom:1em;padding-left:1.9em}table th{text-transform:uppercase;color:#d9d9d9}table em{color:#d9d9d9;font-style:normal}table#stats{font-size:1.2em}table#stats td{padding:0.2em 1.5em}table#stats tr:first-child td{padding-top:1.5em}table#stats tr:last-child td{padding-bottom:1.5em}table#stats td:first-child{width:40%}table#stats td:nth-child(2){color:#d7ec33}table#stats + h6{margin-top:-0.8em}@media screen and (max-width: 600px),
-screen and (max-device-width: 480px){html{-ms-text-size-adjust:none;-webkit-text-size-adjust:none}}@media screen and (max-width: 700px){aside,section{float:none;width:auto;max-width:100%}footer{display:none}p#benford-prediction{text-align:left;margin-top:2em;margin-bottom:2em}}@media screen and (max-width: 480px){body{margin:1em auto}h1{font-size:2.4em}}
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 115, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 18, sass/screen.scss */
+body {
+  background: #232323 url(/images/bg/body.png) 0 0 repeat;
+  font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
+  color: #8f8f8f;
+  font-size: 0.84em;
+  width: 90%;
+  margin: 3em auto;
+}
+
+/* line 27, sass/screen.scss */
+#container {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 31, sass/screen.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* line 35, sass/screen.scss */
+a {
+  color: #dcdcdc;
+  text-decoration: none;
+  border-bottom: dotted 1px #555;
+  -webkit-transition-duration: .30s;
+  -webkit-transition-property: background-color, color;
+}
+/* line 42, sass/screen.scss */
+a:hover {
+  color: #fff;
+  border-bottom: solid 1px #777;
+}
+
+/* line 48, sass/screen.scss */
+em {
+  color: #d9d9d9;
+}
+
+/* line 52, sass/screen.scss */
+h1 {
+  font-family: 'Oswald', 'Helvetica Neue', arial, serif;
+  color: #dcdcdc;
+  font-size: 3.57em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+/* line 59, sass/screen.scss */
+h1 b {
+  color: #d7ec33;
+  display: block;
+}
+
+/* line 66, sass/screen.scss */
+dl dd {
+  margin-bottom: 1em;
+}
+
+/* line 72, sass/screen.scss */
+aside {
+  float: left;
+  width: 36%;
+}
+/* line 76, sass/screen.scss */
+aside p {
+  line-height: 1.1em;
+}
+/* line 80, sass/screen.scss */
+aside p.github {
+  background: transparent url(/images/octocat.png) 0% 20% no-repeat;
+  padding-left: 1.7em;
+}
+
+/* line 86, sass/screen.scss */
+footer {
+  margin-top: 2em;
+}
+
+/* line 91, sass/screen.scss */
+section {
+  line-height: 1.1em;
+  float: right;
+  width: 60%;
+}
+/* line 96, sass/screen.scss */
+section header {
+  margin-top: 0.8em;
+  min-height: 7em;
+  position: relative;
+}
+/* line 101, sass/screen.scss */
+section header h2 {
+  font-size: 2.4em;
+  line-height: 0.9;
+  color: #fefefe;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  position: absolute;
+  bottom: 0;
+}
+/* line 112, sass/screen.scss */
+section h6 {
+  font-size: 0.9em;
+}
+
+/* line 117, sass/screen.scss */
+#dataset-wrapper {
+  background: #202020;
+  background: rgba(25, 25, 25, 0.52);
+  padding: 0.3em 0.3em;
+  margin-top: 0.3em;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 7, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#dataset-wrapper {
+  *display: inline;
+}
+
+/* line 126, sass/screen.scss */
+ol#chart {
+  margin-top: 0.4em;
+}
+/* line 129, sass/screen.scss */
+ol#chart li {
+  position: relative;
+  margin-bottom: 0.8em;
+  font-size: 1.1em;
+  line-height: 2;
+}
+/* line 135, sass/screen.scss */
+ol#chart li .digit {
+  position: absolute;
+  left: -1em;
+}
+/* line 140, sass/screen.scss */
+ol#chart li .fill {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  height: 2em;
+  background-color: #d7ec33;
+  margin-right: 0.5em;
+}
+/* line 7, ../../../../../.rvm/gems/ruby-1.9.2-p136/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+ol#chart li .fill {
+  *display: inline;
+}
+/* line 147, sass/screen.scss */
+ol#chart li b {
+  line-height: 1;
+  position: absolute;
+  bottom: -0.8em;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-size: 70%;
+  color: #fe0086;
+}
+
+/* line 158, sass/screen.scss */
+p#benford-prediction {
+  text-align: right;
+  font-size: 0.8em;
+  margin-top: -1.8em;
+  margin-bottom: 2.5em;
+}
+/* line 164, sass/screen.scss */
+p#benford-prediction b {
+  font-size: 70%;
+  color: #fe0086;
+}
+
+/* line 170, sass/screen.scss */
+table {
+  width: 100%;
+  background: #202020;
+  background: rgba(25, 25, 25, 0.52);
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+/* line 177, sass/screen.scss */
+table th, table td {
+  padding: 0.1em 1.5em;
+}
+/* line 182, sass/screen.scss */
+table thead th {
+  padding-top: 1em;
+}
+/* line 187, sass/screen.scss */
+table tfoot {
+  color: #d7ec33;
+  font-size: 0.8em;
+}
+/* line 191, sass/screen.scss */
+table tfoot td {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  padding-left: 1.9em;
+}
+/* line 198, sass/screen.scss */
+table th {
+  text-transform: uppercase;
+  color: #d9d9d9;
+}
+/* line 203, sass/screen.scss */
+table em {
+  color: #d9d9d9;
+  font-style: normal;
+}
+
+/* line 210, sass/screen.scss */
+table#stats {
+  font-size: 1.2em;
+}
+/* line 212, sass/screen.scss */
+table#stats td {
+  padding: 0.2em 1.5em;
+}
+/* line 215, sass/screen.scss */
+table#stats tr:first-child td {
+  padding-top: 1.5em;
+}
+/* line 218, sass/screen.scss */
+table#stats tr:last-child td {
+  padding-bottom: 1.5em;
+}
+/* line 221, sass/screen.scss */
+table#stats td:first-child {
+  width: 40%;
+}
+/* line 224, sass/screen.scss */
+table#stats td:nth-child(2) {
+  color: #d7ec33;
+}
+
+/* line 229, sass/screen.scss */
+table#stats + h6 {
+  margin-top: -0.8em;
+}
+
+@media screen and (max-width: 600px),
+screen and (max-device-width: 480px) {
+  /* line 235, sass/screen.scss */
+  html {
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  /* line 243, sass/screen.scss */
+  aside, section {
+    float: none;
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* line 249, sass/screen.scss */
+  footer {
+    display: none;
+  }
+
+  /* line 253, sass/screen.scss */
+  p#benford-prediction {
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 261, sass/screen.scss */
+  body {
+    margin: 1em auto;
+  }
+
+  /* line 264, sass/screen.scss */
+  h1 {
+    font-size: 2.4em;
+  }
+}
