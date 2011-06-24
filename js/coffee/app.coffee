@@ -14,6 +14,11 @@ BENFORD_VALUES = {
 
 MAX_CHART_WIDTH_PERCENTAGE = 81
 
+# Used to detect initial (useless) popstate.
+# If history.state exists, assume browser isn't going to fire initial popstate.
+popped = ('state' of window.history)
+initialURL = location.href
+
 $(document).ready ->
   initChart()
   adjustFooter()
@@ -49,12 +54,53 @@ populateDatasetOptions = ->
 
     $('#dataset-options').html(items.join(''))
 
-    getDataset $('#dataset-options option:first').val()
+    currentDataset = getLocation()
+
     observeDatasetOptions()
+    watchForPopState()
+
+    # Set the select menu to the correct value
+    $('#dataset-options').val(currentDataset)
+
+    # Draw the chart when the page first loads
+    zeroChart(currentDataset)
 
 observeDatasetOptions = ->
   $('#dataset-options').change ->
-    zeroChart $(@).val()
+    nextDataset = $(@).val()
+
+    # Draw the chosen dataset when the select menu changes
+    zeroChart nextDataset
+
+    # Use pushState to allow the back button to work
+    if (window.history && window.history.pushState)
+      window.history.pushState({}, document.title, nextDataset)
+
+watchForPopState = ->
+  # Make sure this browser supports HTML5 history
+  if (window.history && window.history.pushState)
+    $(window).bind 'popstate', (event) ->
+      # Ignore inital popstate that some browsers fire on page load
+      initialPop = !popped && location.href == initialURL
+      popped = true
+      return if initialPop
+
+      dataset = getLocation()
+
+      # Set the select menu to the correct value
+      $('#dataset-options').val(dataset)
+
+      # Draw the chart
+      zeroChart dataset
+
+getLocation = (href) ->
+    path = location.href.substring(location.href.lastIndexOf("/")+1)
+    # Get the default if there is no dataset in the path
+    path = getDefaultLocation() if path.length == 0
+    return path
+
+getDefaultLocation = ->
+  return $('#dataset-options option:first').val()
 
 zeroChart = (nextDataset) ->
   $('table#stats td:nth-child(2)').fadeOut('fast')

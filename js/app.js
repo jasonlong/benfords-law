@@ -1,5 +1,5 @@
 (function() {
-  var BENFORD_VALUES, MAX_CHART_WIDTH_PERCENTAGE, adjustFooter, drawChart, getDataset, getMultiplierForDataset, getOrdersOfMagnitudeBetween, initChart, observeDatasetOptions, placeBenfordMarkers, populateDatasetOptions, zeroChart;
+  var BENFORD_VALUES, MAX_CHART_WIDTH_PERCENTAGE, adjustFooter, drawChart, getDataset, getDefaultLocation, getLocation, getMultiplierForDataset, getOrdersOfMagnitudeBetween, initChart, initialURL, observeDatasetOptions, placeBenfordMarkers, popped, populateDatasetOptions, watchForPopState, zeroChart;
   BENFORD_VALUES = {
     1: 30.1,
     2: 17.6,
@@ -12,6 +12,8 @@
     9: 4.6
   };
   MAX_CHART_WIDTH_PERCENTAGE = 81;
+  popped = 'state' in window.history;
+  initialURL = location.href;
   $(document).ready(function() {
     initChart();
     adjustFooter();
@@ -43,20 +45,54 @@
   };
   populateDatasetOptions = function() {
     return $.getJSON('/js/datasets/index.json', function(data) {
-      var items;
+      var currentDataset, items;
       items = [];
       $.each(data, function(key, val) {
         return items.push('<option value="' + key + '">' + val + '</option>');
       });
       $('#dataset-options').html(items.join(''));
-      getDataset($('#dataset-options option:first').val());
-      return observeDatasetOptions();
+      currentDataset = getLocation();
+      observeDatasetOptions();
+      watchForPopState();
+      $('#dataset-options').val(currentDataset);
+      return zeroChart(currentDataset);
     });
   };
   observeDatasetOptions = function() {
     return $('#dataset-options').change(function() {
-      return zeroChart($(this).val());
+      var nextDataset;
+      nextDataset = $(this).val();
+      zeroChart(nextDataset);
+      if (window.history && window.history.pushState) {
+        return window.history.pushState({}, document.title, nextDataset);
+      }
     });
+  };
+  watchForPopState = function() {
+    if (window.history && window.history.pushState) {
+      return $(window).bind('popstate', function(event) {
+        var dataset, initialPop;
+        initialPop = !popped && location.href === initialURL;
+        popped = true;
+        if (initialPop) {
+          return;
+        }
+        dataset = getLocation();
+        $('#dataset-options').val(dataset);
+        return zeroChart(dataset);
+      });
+    }
+  };
+  getLocation = function(href) {
+    var path;
+    path = location.href.substring(location.href.lastIndexOf("/") + 1);
+    if (path.length === 0) {
+      path = getDefaultLocation();
+    }
+    return path;
+  };
+  getDefaultLocation = function() {
+    return $('#dataset-options option:first').val();
   };
   zeroChart = function(nextDataset) {
     $('table#stats td:nth-child(2)').fadeOut('fast');
