@@ -1,7 +1,7 @@
 {
-  "twitter": "Twitter users by followers count",
-  "stars": "Distance of stars from Earth in light years",
-  "kiva": "Loan amounts on kiva.org",
-  "library": "Total number of print materials in US libraries",
-  "spain": "Population of Spanish cities"
+  "twitter-users-by-followers-count": "Twitter users by followers count",
+  "distance-of-stars-from-earth-in-light-years": "Distance of stars from Earth in light years",
+  "loan-amounts-on-kiva-org": "Loan amounts on kiva.org",
+  "total-number-of-print-materials-in-us-libraries": "Total number of print materials in US libraries",
+  "population-of-spanish-cities": "Population of Spanish cities"
 }
