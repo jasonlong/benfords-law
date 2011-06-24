@@ -44,6 +44,28 @@ Add your new file in the `/js/datasets/` directory with a name that matches the 
 
 It's important to include the source of the data used so that others can verify and reproduce the results.
 
+## Crunching the data
+
+Generating Benford stats is a fairly straightforward process. We've made a simple ruby class for you to use if you'd like.
+
+First, grab a copy of the class from here: https://gist.github.com/1044174
+
+Second, include the class in your script like so:
+
+```ruby
+require 'benford_counter'
+require 'rubygems'
+require 'csv'
+
+counter = BenfordCounter.new
+
+CSV.foreach("spain.txt") do |row|
+  counter.count(row[9])
+end
+
+counter.results
+```
+
 ## Updating Javascript and CSS
 
 We're using CoffeeScript for the Javascript and Sass/Compass for the CSS.
