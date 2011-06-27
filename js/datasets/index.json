@@ -6,5 +6,6 @@
   "total-number-of-print-materials-in-us-libraries": "Total number of print materials in US libraries",
   "population-of-spanish-cities": "Population of Spanish cities",
   "linux-filesizes": "File sizes in the Linux 2.6.39.2 source tree",
-  "mexico-population-by-county" : "Population of Mexico's Counties (Municipios)"
+  "mexico-population-by-county" : "Population of Mexico's Counties (Municipios)",
+  "stackoverflow-user-reputation" : "Stack Overflow User Reputation"
 }
