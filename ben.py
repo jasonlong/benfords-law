@@ -7,12 +7,12 @@ import subprocess
 #      110 vidioc-g-dv-preset.xml
 linecount_cmd = "rm results; for i in *; do find $i -execdir wc -c '{}' \; " + \
     ">> results; done;"
-#os.system(linecount_cmd)
+os.system(linecount_cmd)
 
 # Then figure out how many are in each bucket (linecount's initial digit)
 bucket_cmd = 'for i in `jot 9`; do egrep "^[ ]*$i" results| ' + \
     'wc -l; done  > counts'
-#os.system(bucket_cmd)
+os.system(bucket_cmd)
 
 # And how many total files there are...
 total_cmd = 'wc -l results'
