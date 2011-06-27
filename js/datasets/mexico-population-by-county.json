@@ -1,0 +1,18 @@
+{
+  "values": {
+    "1":31.1889,
+    "2":17.5488,
+    "3":12.7035,
+    "4":9.8534,
+    "5":7.3697,
+    "6":6.6368,
+    "7":5.0488,
+    "8":5.1302,
+    "9":4.5195
+  },
+  "num_records":"2,456",
+  "min_value":"93",
+  "max_value":"1,815,786",
+  "source":"http://www.inegi.org.mx/sistemas/consulta_resultados/iter2010.aspx"
+}
+
