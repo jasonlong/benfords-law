@@ -20,11 +20,21 @@ body {
   font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
   color: $text_color;
   font-size: 0.84em;
-  width: 90%;
-  margin: 3em auto;
+  /* width: 90%; */
+  margin: 0 auto 3em auto;
+}
+
+#hacker-news {
+  margin-bottom: 3em;
+  text-align: center;
+  background-color: #111;
+  border-bottom: solid 1px #333;
+  padding: 0.7em 0;
 }
 
 #container {
+  width: 90%;
+  margin: 0 auto;
   @include clearfix;
 }
 
@@ -241,6 +251,9 @@ screen and (max-device-width: 480px) {
 
 
 @media screen and (max-width: 700px) {
+  #hacker-news {
+    margin-bottom: 2em;
+  }
   aside, section { 
     float: none; 
     width: auto;
@@ -260,7 +273,7 @@ screen and (max-device-width: 480px) {
 
 @media screen and (max-width: 480px) {
   body { 
-    margin: 1em auto; 
+    /* margin: 1em auto;  */
   }
   h1 { font-size: 2.4em; }
 }
