@@ -66,6 +66,10 @@ end
 counter.results
 ```
 
+### Additional Tools
+
+[fweez](https://github.com/fweez) contributed the Linux filesize dataset and [created a Python script for tallying filesizes in a directory](https://gist.github.com/1049438).
+
 ## Updating Javascript and CSS
 
 We're using CoffeeScript for the Javascript and Sass/Compass for the CSS.
