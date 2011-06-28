@@ -70,33 +70,22 @@ body {
   font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
   color: #8f8f8f;
   font-size: 0.84em;
-  /* width: 90%; */
-  margin: 0 auto 3em auto;
+  width: 90%;
+  margin: 3em auto;
 }
 
 /* line 27, sass/screen.scss */
-#hacker-news {
-  margin-bottom: 3em;
-  text-align: center;
-  background-color: #111;
-  border-bottom: solid 1px #333;
-  padding: 0.7em 0;
-}
-
-/* line 35, sass/screen.scss */
 #container {
-  width: 90%;
-  margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 41, sass/screen.scss */
+/* line 31, sass/screen.scss */
 p {
   margin-bottom: 1em;
 }
 
-/* line 45, sass/screen.scss */
+/* line 35, sass/screen.scss */
 a {
   color: #dcdcdc;
   text-decoration: none;
@@ -104,18 +93,18 @@ a {
   -webkit-transition-duration: .30s;
   -webkit-transition-property: background-color, color;
 }
-/* line 52, sass/screen.scss */
+/* line 42, sass/screen.scss */
 a:hover {
   color: #fff;
   border-bottom: solid 1px #777;
 }
 
-/* line 58, sass/screen.scss */
+/* line 48, sass/screen.scss */
 em {
   color: #d9d9d9;
 }
 
-/* line 62, sass/screen.scss */
+/* line 52, sass/screen.scss */
 h1 {
   font-family: 'Oswald', 'Helvetica Neue', arial, serif;
   color: #dcdcdc;
@@ -123,54 +112,54 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 0.4em;
 }
-/* line 69, sass/screen.scss */
+/* line 59, sass/screen.scss */
 h1 b {
   color: #d7ec33;
   display: block;
 }
 
-/* line 75, sass/screen.scss */
+/* line 65, sass/screen.scss */
 dl {
   margin-top: 1em;
 }
-/* line 77, sass/screen.scss */
+/* line 67, sass/screen.scss */
 dl dd {
   margin-bottom: 1em;
 }
 
-/* line 83, sass/screen.scss */
+/* line 73, sass/screen.scss */
 aside {
   float: left;
   width: 36%;
 }
-/* line 87, sass/screen.scss */
+/* line 77, sass/screen.scss */
 aside p {
   line-height: 1.1em;
 }
-/* line 91, sass/screen.scss */
+/* line 81, sass/screen.scss */
 aside p.github {
   background: transparent url(/images/octocat.png) 0% 20% no-repeat;
   padding-left: 1.7em;
 }
 
-/* line 97, sass/screen.scss */
+/* line 87, sass/screen.scss */
 footer {
   margin-top: 2em;
 }
 
-/* line 102, sass/screen.scss */
+/* line 92, sass/screen.scss */
 section {
   line-height: 1.1em;
   float: right;
   width: 60%;
 }
-/* line 107, sass/screen.scss */
+/* line 97, sass/screen.scss */
 section header {
   margin-top: 0.8em;
   min-height: 7em;
   position: relative;
 }
-/* line 112, sass/screen.scss */
+/* line 102, sass/screen.scss */
 section header h2 {
   font-size: 2.4em;
   line-height: 0.9;
@@ -180,12 +169,12 @@ section header h2 {
   position: absolute;
   bottom: 0;
 }
-/* line 123, sass/screen.scss */
+/* line 113, sass/screen.scss */
 section h6 {
   font-size: 0.9em;
 }
 
-/* line 128, sass/screen.scss */
+/* line 118, sass/screen.scss */
 #dataset-wrapper {
   background: #202020;
   background: rgba(25, 25, 25, 0.52);
@@ -208,23 +197,23 @@ section h6 {
   *display: inline;
 }
 
-/* line 137, sass/screen.scss */
+/* line 127, sass/screen.scss */
 ol#chart {
   margin-top: 0.4em;
 }
-/* line 140, sass/screen.scss */
+/* line 130, sass/screen.scss */
 ol#chart li {
   position: relative;
   margin-bottom: 0.8em;
   font-size: 1.1em;
   line-height: 2;
 }
-/* line 146, sass/screen.scss */
+/* line 136, sass/screen.scss */
 ol#chart li .digit {
   position: absolute;
   left: -1em;
 }
-/* line 151, sass/screen.scss */
+/* line 141, sass/screen.scss */
 ol#chart li .fill {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -239,7 +228,7 @@ ol#chart li .fill {
 ol#chart li .fill {
   *display: inline;
 }
-/* line 158, sass/screen.scss */
+/* line 148, sass/screen.scss */
 ol#chart li b {
   line-height: 1;
   position: absolute;
@@ -249,20 +238,20 @@ ol#chart li b {
   color: #fe0086;
 }
 
-/* line 169, sass/screen.scss */
+/* line 159, sass/screen.scss */
 p#benford-prediction {
   text-align: right;
   font-size: 0.8em;
   margin-top: -1.8em;
   margin-bottom: 2.5em;
 }
-/* line 175, sass/screen.scss */
+/* line 165, sass/screen.scss */
 p#benford-prediction b {
   font-size: 70%;
   color: #fe0086;
 }
 
-/* line 181, sass/screen.scss */
+/* line 171, sass/screen.scss */
 table {
   width: 100%;
   background: #202020;
@@ -270,93 +259,88 @@ table {
   font-size: 1.1em;
   margin-bottom: 1em;
 }
-/* line 188, sass/screen.scss */
+/* line 178, sass/screen.scss */
 table th, table td {
   padding: 0.1em 1.5em;
 }
-/* line 193, sass/screen.scss */
+/* line 183, sass/screen.scss */
 table thead th {
   padding-top: 1em;
 }
-/* line 198, sass/screen.scss */
+/* line 188, sass/screen.scss */
 table tfoot {
   color: #d7ec33;
   font-size: 0.8em;
 }
-/* line 202, sass/screen.scss */
+/* line 192, sass/screen.scss */
 table tfoot td {
   padding-top: 0.5em;
   padding-bottom: 1em;
   padding-left: 1.9em;
 }
-/* line 209, sass/screen.scss */
+/* line 199, sass/screen.scss */
 table th {
   text-transform: uppercase;
   color: #d9d9d9;
 }
-/* line 214, sass/screen.scss */
+/* line 204, sass/screen.scss */
 table em {
   color: #d9d9d9;
   font-style: normal;
 }
 
-/* line 221, sass/screen.scss */
+/* line 211, sass/screen.scss */
 table#stats {
   font-size: 1.2em;
 }
-/* line 223, sass/screen.scss */
+/* line 213, sass/screen.scss */
 table#stats td {
   padding: 0.2em 1.5em;
 }
-/* line 226, sass/screen.scss */
+/* line 216, sass/screen.scss */
 table#stats tr:first-child td {
   padding-top: 1.5em;
 }
-/* line 229, sass/screen.scss */
+/* line 219, sass/screen.scss */
 table#stats tr:last-child td {
   padding-bottom: 1.5em;
 }
-/* line 232, sass/screen.scss */
+/* line 222, sass/screen.scss */
 table#stats td:first-child {
   width: 40%;
 }
-/* line 235, sass/screen.scss */
+/* line 225, sass/screen.scss */
 table#stats td:nth-child(2) {
   color: #d7ec33;
 }
 
-/* line 240, sass/screen.scss */
+/* line 230, sass/screen.scss */
 table#stats + h6 {
   margin-top: -0.8em;
 }
 
 @media screen and (max-width: 600px),
 screen and (max-device-width: 480px) {
-  /* line 246, sass/screen.scss */
+  /* line 236, sass/screen.scss */
   html {
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
   }
 }
 @media screen and (max-width: 700px) {
-  /* line 254, sass/screen.scss */
-  #hacker-news {
-    margin-bottom: 2em;
-  }
-
-  /* line 257, sass/screen.scss */
+  /* line 244, sass/screen.scss */
   aside, section {
     float: none;
     width: auto;
     max-width: 100%;
   }
 
-  /* line 263, sass/screen.scss */
+  /* line 250, sass/screen.scss */
   footer {
     display: none;
   }
 
-  /* line 267, sass/screen.scss */
+  /* line 254, sass/screen.scss */
   p#benford-prediction {
     text-align: left;
     margin-top: 2em;
@@ -364,12 +348,12 @@ screen and (max-device-width: 480px) {
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 275, sass/screen.scss */
+  /* line 262, sass/screen.scss */
   body {
-    /* margin: 1em auto;  */
+    margin: 1em auto;
   }
 
-  /* line 278, sass/screen.scss */
+  /* line 265, sass/screen.scss */
   h1 {
     font-size: 2.4em;
   }
