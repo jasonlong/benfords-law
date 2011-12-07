@@ -8,5 +8,6 @@
   "linux-filesizes": "File sizes in the Linux 2.6.39.2 source tree",
   "mexico-population-by-county" : "Population of Mexico's Counties (Municipios)",
   "stackoverflow-user-reputation" : "Stack Overflow User Reputation",
-  "rails-core-line-count" : "Line count of the Rails 3.0.9 core source code"
+  "rails-core-line-count" : "Line count of the Rails 3.0.9 core source code",
+  "uk-government-spending-may_to_sept-2010" : "UK Govt spending May-Sept 2010"
 }
