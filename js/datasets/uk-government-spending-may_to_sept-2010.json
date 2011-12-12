@@ -1,0 +1,17 @@
+{
+    "values": {
+        "1": 29.1,
+        "2": 17.5,
+        "3": 12.2,
+        "4": 9.6,
+        "5": 8.6,
+        "6": 7.3,
+        "7": 6.1,
+        "8": 5.1,
+        "9": 4.6
+    },
+    "num_records": "190,379",
+    "min_value": "1",
+    "max_value": "999,994",
+    "source": "http://www.guardian.co.uk/news/datablog/2010/nov/19/government-spending-data?intcmp=239"
+}
