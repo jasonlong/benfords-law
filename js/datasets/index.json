@@ -10,8 +10,5 @@
   "stackoverflow-user-reputation" : "Stack Overflow User Reputation",
   "rails-core-line-count" : "Line count of the Rails 3.0.9 core source code",
   "uk-government-spending-may_to_sept-2010" : "UK government spending May-Sept 2010",
-  "2011-russian-parlimentary-elections-united-russia": "2011 Russian Parlimentary Elections Results: Votes for United Russia",
-  "2011-russian-parlimentary-elections-ballots-received-by-precinct": "2011 Russian Parlimentary Elections Results: Ballots received by precinct voting commission",
-  "2011-russian-parlimentary-elections-absentee-ballots-at-polling-station": "2011 Russian Parlimentary Elections Results: The number of voters who voted with absentee ballots at a polling station",
-  "2011-russian-parlimentary-elections-invalid-ballots": "2011 Russian Parlimentary Elections Results: Invalid ballots" 
+  "2011-russian-parlimentary-elections-united-russia": "2011 Russian Parlimentary Elections Results: Votes for United Russia"
 }
