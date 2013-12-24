@@ -49,8 +49,8 @@ em {
   color: $brighter_text_color;
 }
 
-h1 { 
-  font-family: 'Oswald', 'Helvetica Neue', arial, serif; 
+h1 {
+  font-family: 'Oswald', 'Helvetica Neue', arial, serif;
   color: #dcdcdc;
   font-size: 3.57em;
   text-transform: uppercase;
@@ -100,7 +100,7 @@ section {
     position: relative;
 
     h2 {
-      font-size: 2.4em; 
+      font-size: 2.4em;
       line-height: 0.9;
       color: #fefefe;
       margin-top: 0.5em;
@@ -149,6 +149,7 @@ ol#chart {
       line-height: 1;
       position: absolute;
       bottom: -0.8em;
+      text-indent: -5px; // to center the pointer
       font-family: "Helvetica Neue", arial, sans-serif;
       font-size: 70%;
       color: $marker_color;
@@ -161,7 +162,7 @@ p#benford-prediction {
   font-size: 0.8em;
   margin-top: -1.8em;
   margin-bottom: 2.5em;
-  
+
   b {
     font-size: 70%;
     color: $marker_color;
@@ -178,13 +179,13 @@ table {
   th, td {
     padding: 0.1em 1.5em;
   }
-  
+
   thead {
     th {
       padding-top: 1em;
     }
   }
-  
+
   tfoot {
     color: $highlight_color;
     font-size: 0.8em;
@@ -241,8 +242,8 @@ screen and (max-device-width: 480px) {
 
 
 @media screen and (max-width: 700px) {
-  aside, section { 
-    float: none; 
+  aside, section {
+    float: none;
     width: auto;
     max-width: 100%;
   }
@@ -259,8 +260,8 @@ screen and (max-device-width: 480px) {
 }
 
 @media screen and (max-width: 480px) {
-  body { 
-    margin: 1em auto; 
+  body {
+    margin: 1em auto;
   }
   h1 { font-size: 2.4em; }
 }
