@@ -1,6 +1,4 @@
 {
-  "brazilian-addresses-numbers": "Brazilian Adresses Street Numbers",
-  "brazilian-cities-population": "Brazilian Cities Population",
   "twitter-users-by-followers-count": "Twitter users by followers count",
   "most-common-iphone-passcodes": "Most common iPhone passcodes",
   "distance-of-stars-from-earth-in-light-years": "Distance of stars from Earth in light years",
@@ -16,5 +14,7 @@
   "population-of-turkish-boroughs": "Population of Turkish boroughs",
   "google-books-1-grams": "Google books unique 1-grams",
   "2007-population-per-district-in-peru": "2007 population per district in Peru. Source: INEI",
-  "first-652066-fibonacci-numbers": "First 652066 Fibonacci Numbers"
+  "first-652066-fibonacci-numbers": "First 652066 Fibonacci Numbers",
+  "brazilian-addresses-numbers": "Brazilian Adresses Street Numbers",
+  "brazilian-cities-population": "Brazilian Cities Population"
 }
