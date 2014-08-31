@@ -1,0 +1,17 @@
+{
+  "values": {
+    "1": 29.59,
+    "2": 18.13,
+    "3": 13.18,
+    "4": 10.50,
+    "5": 8.04,
+    "6": 6.66,
+    "7": 5.79,
+    "8": 4.72,
+    "9": 3.35
+  },
+  "num_records": "5570",
+  "min_value": "825",
+  "max_value": "11821873",
+  "source": "http://pt.wikipedia.org/wiki/Anexo:Lista_de_munic%C3%ADpios_do_Brasil_por_popula%C3%A7%C3%A3o"
+}
