@@ -1,0 +1,17 @@
+{
+    "values": {
+        "1": 32.24,
+        "2": 19.24,
+        "3": 13.06,
+        "4": 10.85,
+        "5": 8.90,
+        "6": 5.36,
+        "7": 4.54,
+        "8": 2.97,
+        "9": 2.84
+    },
+    "num_records": "1585",
+    "min_value": "1",
+    "max_value": "6601",
+    "source": "http://www.systemicpeace.org/inscrdata.html"
+}
