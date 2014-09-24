@@ -1,0 +1,17 @@
+{
+    "values": {
+        "1": 36.37,
+        "2": 22.66,
+        "3": 13.79,
+        "4": 10.84,
+        "5": 6.34,
+        "6": 3.03,
+        "7": 2.09,
+        "8": 2.40,
+        "9": 2.48
+    },
+    "num_records": "2538",
+    "min_value": "1",
+    "max_value": "90",
+    "source": "http://msi.nga.mil/NGAPortal/MSI.portal?_nfpb=true&_pageLabel=msi_portal_page_62&pubCode=0015"
+}
