@@ -1,0 +1,17 @@
+{
+    "values": {
+        "1": 28.92,
+        "2": 18.64,
+        "3": 11.15,
+        "4": 10.10,
+        "5": 8.36,
+        "6": 8.19,
+        "7": 5.23,
+        "8": 4.88,
+        "9": 4.53
+    },
+    "num_records": "8273",
+    "min_value": "300",
+    "max_value": "199000000",
+    "source": "http://www.correlatesofwar.org/COW2%20Data/Religion/Religion.htm"
+}

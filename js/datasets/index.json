@@ -20,5 +20,9 @@
   "brazilian-addresses-numbers": "Brazilian Adresses Street Numbers",
   "brazilian-cities-population": "Brazilian Cities Population",
   "tidal-range-world-port-index": "Mean tidal range of maritime ports",
-  "forcibly-displaced-populations": "Forcibly displaced populations, 1964-2008"
+  "forcibly-displaced-populations": "Forcibly displaced populations, 1964-2008",
+  "protestants-of-world": "Number of Protestant Christians per country",
+  "sunni-muslims-of-world": "Number of Sunni Muslims per country",
+  "population-of-world": "Population of countries around the world",
+  "gdp-of-world": "Real GDP of countries around the world (in mil. 2005US$)"
 }
