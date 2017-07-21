@@ -1,0 +1,17 @@
+ { 
+         "values": {
+                  "1": 40,
+                  "2": 23.81,
+                  "3": 8.57,
+                  "4": 5.24,
+                  "5": 3.81,
+                  "6": 4.29,
+                  "7": 5.24,
+                  "8": 5.24,
+                  "9": 3.81,
+         },
+         "num_records": "210",
+         "min_value": "158",
+         "max_value": "4532",
+         "source": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/eurodist.html"
+ }
