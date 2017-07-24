@@ -1,0 +1,17 @@
+ { 
+         "values": {
+                  "1": 33.33,
+                  "2": 23.61,
+                  "3": 23.61,
+                  "4": 14.58,
+                  "5": 3.47,
+                  "6": 1.39,
+                  "7": 0,
+                  "8": 0,
+                  "9": 0,
+         },
+         "num_records": "144",
+         "min_value": "104",
+         "max_value": "622",
+         "source": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/AirPassengers.html"
+ }
