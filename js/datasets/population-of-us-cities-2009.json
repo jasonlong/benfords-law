@@ -1,17 +1,17 @@
- { 
-         "values": {
-                  "1": 29.41,
-                  "2": 18.15,
-                  "3": 12,
-                  "4": 9.47,
-                  "5": 7.99,
-                  "6": 7.02,
-                  "7": 5.98,
-                  "8": 5.35,
-                  "9": 4.63,
-         },
-         "num_records": "19509",
-         "min_value": "1",
-         "max_value": "8391881",
-         "source": "https://www.rdocumentation.org/packages/benford.analysis/versions/0.1.2.1/topics/census.2009"
+ {
+   "values": {
+      "1": 29.41,
+      "2": 18.15,
+      "3": 12,
+      "4": 9.47,
+      "5": 7.99,
+      "6": 7.02,
+      "7": 5.98,
+      "8": 5.35,
+      "9": 4.63
+   },
+   "num_records": "19509",
+   "min_value": "1",
+   "max_value": "8391881",
+   "source": "https://www.rdocumentation.org/packages/benford.analysis/versions/0.1.2.1/topics/census.2009"
  }

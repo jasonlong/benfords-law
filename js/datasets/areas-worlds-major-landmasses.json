@@ -1,17 +1,17 @@
- { 
-         "values": {
-                  "1": 33.33,
-                  "2": 18.75,
-                  "3": 14.58,
-                  "4": 12.5,
-                  "5": 4.17,
-                  "6": 2.08,
-                  "7": 2.08,
-                  "8": 10.42,
-                  "9": 2.08,
-         },
-         "num_records": "48",
-         "min_value": "12",
-         "max_value": "16988",
-         "source": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/islands.html"
- }
+{
+  "values": {
+          "1": 33.33,
+          "2": 18.75,
+          "3": 14.58,
+          "4": 12.5,
+          "5": 4.17,
+          "6": 2.08,
+          "7": 2.08,
+          "8": 10.42,
+          "9": 2.08
+  },
+  "num_records": "48",
+  "min_value": "12",
+  "max_value": "16988",
+  "source": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/islands.html"
+}
