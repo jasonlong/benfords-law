@@ -17,9 +17,10 @@ $gutter_size: 4%;
 
 body {
   background: #232323 url(/images/bg/body.png) 0 0 repeat;
-  font-family: 'Inconsolata', 'Helvetica Neue', arial, serif;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   color: $text_color;
-  font-size: 0.84em;
+  font-size: 13px;
+  line-height: 1.4;
   width: 90%;
   margin: 3em auto;
 }
@@ -50,9 +51,9 @@ em {
 }
 
 h1 {
-  font-family: 'Oswald', 'Helvetica Neue', arial, serif;
   color: #dcdcdc;
-  font-size: 3.57em;
+  font-size: 3em;
+  line-height: 1;
   text-transform: uppercase;
   margin-bottom: 0.4em;
 
@@ -74,10 +75,6 @@ aside {
   float: left;
   width: $golden_ratio_small - ($gutter_size / 2);
 
-  p {
-    line-height: 1.1em;
-  }
-
   p.github {
     background: transparent url(/images/octocat.png) 0% 20% no-repeat;
     padding-left: 1.7em;
@@ -90,12 +87,10 @@ footer {
 
 // main section
 section {
-  line-height: 1.1em;
   float: right;
   width: $golden_ratio_large - ($gutter_size / 2);
 
   header {
-    margin-top: 0.8em;
     min-height: 7em;
     position: relative;
 
@@ -108,10 +103,6 @@ section {
       position: absolute;
       bottom: 0;
     }
-  }
-
-  h6 {
-    font-size: 0.9em;
   }
 }
 
@@ -130,7 +121,6 @@ ol#chart {
   li {
     position: relative;
     margin-bottom: 0.8em;
-    font-size: 1.1em;
     line-height: 2;
 
     .digit {
@@ -159,7 +149,6 @@ ol#chart {
 
 p#benford-prediction {
   text-align: right;
-  font-size: 0.8em;
   margin-top: -1.8em;
   margin-bottom: 2.5em;
 
@@ -173,7 +162,6 @@ table {
   width: 100%;
   background: #202020;
   background: rgba(25, 25, 25, 0.52);
-  font-size: 1.1em;
   margin-bottom: 1em;
 
   th, td {
@@ -188,12 +176,10 @@ table {
 
   tfoot {
     color: $highlight_color;
-    font-size: 0.8em;
 
     td {
       padding-top: 0.5em;
       padding-bottom: 1em;
-      padding-left: 1.9em;
     }
   }
 
@@ -210,7 +196,6 @@ table {
 }
 
 table#stats {
-  font-size: 1.2em;
   td {
     padding: 0.2em 1.5em;
   }
@@ -226,10 +211,6 @@ table#stats {
   td:nth-child(2) {
     color: $highlight_color;
   }
-}
-
-table#stats + h6 {
-  margin-top: -0.8em;
 }
 
 @media screen and (max-width: 600px),
