@@ -1,0 +1,17 @@
+{
+	"values": {
+		"1": 25.36,
+		"2": 15.47,
+		"3": 14.09,
+		"4": 9.98,
+  		"5": 9.48,
+		"6": 8.75,
+		"7": 6.56,
+		"8": 5.66,
+		"9": 4.65
+	},
+	"num_records": "7,724",
+	"min_value": "50",
+	"max_value": "8.173,941",
+	"source": "http://lovemytown.co.uk/populations/townstable1.asp"
+}
