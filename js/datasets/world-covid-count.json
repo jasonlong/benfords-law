@@ -1,0 +1,17 @@
+{
+    "values": {
+      "1": 25.72,
+      "2": 23.55,
+      "3": 11.5,
+      "4": 7.24,
+      "5": 6.88,
+      "6": 7.97,
+      "7": 6.52,
+      "8": 6.15,
+      "9": 4.34
+    },
+    "num_records": "276",
+    "min_value": "27",
+    "max_value": "34029923",
+    "source": "https://ourworldindata.org/coronavirus-source-data"
+  }
