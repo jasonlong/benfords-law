@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static website that tests Benford's Law against large, publicly available datasets. Hosted on Vercel at testingbenfordslaw.com. No build step required for basic development — it's a simple static site with jQuery, JSON data files, and pre-compiled CSS/JS.
+A static website that tests Benford's Law against large, publicly available datasets. Hosted on Cloudflare Pages at testingbenfordslaw.com. No build step required for basic development — it's a simple static site with jQuery, JSON data files, and pre-compiled CSS/JS.
 
 ## Architecture
 
@@ -15,7 +15,7 @@ A static website that tests Benford's Law against large, publicly available data
 - `js/datasets/*.json` — Individual dataset files with `values` (digit 1-9 percentages), `num_records`, `min_value`, `max_value`, `source`
 - `css/sass/screen.scss` — Sass source; **edit this, not `css/screen.css`**
 - `config.rb` — Compass configuration
-- `now.json` — Vercel rewrite config (all routes → index.html for client-side routing)
+- `_redirects` — Cloudflare Pages rewrite config (all routes → index.html for client-side routing)
 
 ## Development Commands
 
